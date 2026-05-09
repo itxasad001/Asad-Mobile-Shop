@@ -17,10 +17,10 @@ function Header() {
   </div>
 
  
-  <div className="stats-grid">
+  <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3>Total Sales</h3>
-      <p>10</p>
+      <h3 >Total Sales</h3>
+      <p className='text-[10px]'>10</p>
     </div>
     <div className="card revenue w-[45%]">
       <h3>Revenue</h3>
@@ -36,7 +36,7 @@ function Header() {
     </div>
   </div>
 
-  <div className='flex justify-end pl-8'>
+  <div className='flex justify-end pl-8 LEft-sideApplyfilter'>
     
     
     <button
