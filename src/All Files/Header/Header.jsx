@@ -91,7 +91,7 @@ apple === true ?
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
          <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -112,9 +112,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -135,9 +135,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -159,9 +159,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -181,9 +181,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -203,9 +203,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -225,9 +225,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -247,9 +247,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -269,9 +269,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -291,9 +291,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -346,9 +346,9 @@ apple === true ?
        <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -365,9 +365,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -384,9 +384,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -403,9 +403,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -422,9 +422,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -441,9 +441,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
@@ -460,9 +460,9 @@ apple === true ?
          <div className="daily-card">
           <div className='flex items-center gap-10'>
         <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
-         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
         <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
-<div className='flex gap-5 MArgincard2 '>
+<div className='flex gap-10 MArgincard2 items-center justify-center '>
 
         <div className='flex items-center Mobile-Width1'>
   <p className=''>Profit:</p>
