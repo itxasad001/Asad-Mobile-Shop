@@ -12,7 +12,7 @@ function App() {
 
       <Routes>
 
-        <Route path={'/header'} exact={true}    element={<Header/>}                 />
+        <Route path={'/'} exact={true}    element={<Header/>}                 />
 
 
 
