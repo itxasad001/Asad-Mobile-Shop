@@ -221,4 +221,7 @@
         padding: 0px;
     
     }
+      .stats-grid {
+        gap: 10px;
+      }
     }
