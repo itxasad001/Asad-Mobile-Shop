@@ -9,7 +9,7 @@ function Header() {
 
 
   <div className="hero">
-    <h1>Sales Performance Dashboard</h1>
+    <h1 className='font-bold'>Sales Dashboard</h1>
     <input type="text" className="search-bar" placeholder="Search sales, revenue, date..."/>
   </div>
 
