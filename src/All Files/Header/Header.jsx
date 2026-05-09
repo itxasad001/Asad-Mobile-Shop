@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 import { MdDelete } from "react-icons/md";
 
 function Header() {
+
+  const [apple , setapple]=useState(false)
+  const [filter, setfilter]=useState("Apply Filter")
   return (
     <div>
       <div className="container">
@@ -15,25 +18,38 @@ function Header() {
 
  
   <div className="stats-grid">
-    <div className="card sales">
+    <div className="card sales w-[45%]">
       <h3>Total Sales</h3>
       <p>10</p>
     </div>
-    <div className="card revenue">
+    <div className="card revenue w-[45%]">
       <h3>Revenue</h3>
       <p>$880,000</p>
     </div>
-    <div className="card profit">
+    <div className="card profit w-[45%]">
       <h3>Total Profit</h3>
       <p>$160,000</p>
     </div>
-    <div className="card extra">
+    <div className="card extra w-[45%]">
       <h3>Total Cost</h3>
       <p>$720,000</p>
     </div>
   </div>
 
+  <div className='flex justify-end pl-8'>
+    
+    
+    <button
 
+    onClick={()=>{setapple(apple===true?false:true),
+      setfilter(filter==="Apply Filter"?"Hide Filter":"Apply Filter")
+
+
+    }}
+    
+    className='text-blue-400 cursor-pointer underline font-bold text-[15px] mb-5 MArgin-Filter '>{filter}</button></div>
+{
+apple === true ? 
   <div className="filter-bar">
     <input type="date"/>
     
@@ -59,13 +75,9 @@ function Header() {
 
     <button>Apply Filters</button>
   </div>
+:""
+}
 
-
-  <div className="summary-strip">
-    <div>Total Sales: 350</div>
-    <div>Total Revenue: $12,400</div>
-    <div>Total Profit: $4,850</div>
-  </div>
 
 
   <div className="date-section">
