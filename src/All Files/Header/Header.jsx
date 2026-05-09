@@ -84,103 +84,251 @@ apple === true ?
 
     <div className="date-header">12 May 2026</div>
     <div className="daily-cards">
-      <div className="daily-card">
-     <div className='color-black w-[150px] '>Product title</div>
-      <div className='color-black'>Customer Name</div>
-       <div className='color-black w-[110px] w-[110px] flex justify-center '>Product Cost</div>
-       <div className='color-black w-[110px] flex justify-center'>Sold Cost</div>
-         <div className='color-black w-[50px] flex justify-center'>Profit</div>
-        <div>
-       
-        </div>
-      </div>
-
-        <div className="daily-card">
-        <h4 className='w-[150px]'>IPhone 12 Pro max</h4>
-        <p>Zeeshan Ali Zafar</p>
-        <p className=' w-[110px] flex justify-center'>90000</p>
-        <p className='w-[110px] flex justify-center'>110000</p>
-          <div className='w-[50px] flex justify-center text-green-600'>$20000</div>
-        <div><MdDelete /></div>
-      </div>
-
-     <div className="daily-card">
-        <h4 className='w-[150px]'>IPhone 12 Pro max</h4>
-        <p>Zeeshan Ali Zafar</p>
-        <p className=' w-[110px] flex justify-center'>90000</p>
-        <p className='w-[110px] flex justify-center'>110000</p>
-          <div className='w-[50px] flex justify-center text-green-600'>$20000</div>
-        <div><MdDelete /></div>
-      </div>
-
-        <div className="daily-card">
-        <h4 className='w-[150px]'>IPhone 12 Pro max</h4>
-        <p>Zeeshan Ali Zafar</p>
-        <p className=' w-[110px] flex justify-center'>90000</p>
-        <p className='w-[110px] flex justify-center'>110000</p>
-          <div className='w-[50px] flex justify-center text-green-600'>$20000</div>
-        <div><MdDelete /></div>
-      </div>
-
-
-
-        <div className="daily-card">
-        <h4 className='w-[150px]'>IPhone 12 Pro max</h4>
-        <p>Zeeshan Ali Zafar</p>
-        <p className=' w-[110px] flex justify-center'>90000</p>
-        <p className='w-[110px] flex justify-center'>110000</p>
-          <div className='w-[50px] flex justify-center text-green-600'>$20000</div>
-        <div><MdDelete /></div>
-      </div>
-
-
-
-
-        <div className="daily-card">
-        <h4 className='w-[150px]'>IPhone 12 Pro max</h4>
-        <p>Zeeshan Ali Zafar</p>
-        <p className=' w-[110px] flex justify-center'>90000</p>
-        <p className='w-[110px] flex justify-center'>110000</p>
-          <div className='w-[50px] flex justify-center text-green-600'>$20000</div>
-        <div><MdDelete /></div>
-      </div>
-
-
-
-
-
-        <div className="daily-card">
-        <h4 className='w-[150px]'>IPhone 12 Pro max</h4>
-        <p>Zeeshan Ali Zafar</p>
-        <p className=' w-[110px] flex justify-center'>90000</p>
-        <p className='w-[110px] flex justify-center'>110000</p>
-          <div className='w-[50px] flex justify-center text-green-600'>$20000</div>
-        <div><MdDelete /></div>
-      </div>
-
-
-
-
-        <div className="daily-card">
-        <h4 className='w-[150px]'>IPhone 12 Pro max</h4>
-        <p>Zeeshan Ali Zafar</p>
-        <p className=' w-[110px] flex justify-center'>90000</p>
-        <p className='w-[110px] flex justify-center'>110000</p>
-          <div className='w-[50px] flex justify-center text-green-600'>$20000</div>
-        <div><MdDelete /></div>
-      </div>
-
-
-
-        <div className="daily-card">
-        <h4 className='w-[150px]'>IPhone 12 Pro max</h4>
-        <p>Zeeshan Ali Zafar</p>
-        <p className=' w-[110px] flex justify-center'>90000</p>
-        <p className='w-[110px] flex justify-center'>110000</p>
-       <div className='w-[50px] flex justify-center text-green-600'>$20000</div>
     
-        <div><MdDelete /></div>
+
+        <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px] text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
       </div>
+
+
+
+
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+
+
+
+
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+
+
+
+
+
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+
+
+
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+
+
+
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+
+
+
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+
+
+
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+
+
+
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+
+
+
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+
+
+ 
+
+   
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+      
+
     </div>
   </div>
 
@@ -193,24 +341,140 @@ apple === true ?
   <div className="date-section">
     <div className="date-header">13 May 2026</div>
     <div className="daily-cards">
-        <div className="daily-card">
-        <h4 className='w-[150px]'>IPhone 12 Pro max</h4>
-        <p>Zeeshan Ali Zafar</p>
-        <p className=' w-[110px] flex justify-center'>90000</p>
-        <p className='w-[110px] flex justify-center'>110000</p>
-       <div className='w-[50px] flex justify-center text-green-600'>$20000</div>
-    
-        <div><MdDelete /></div>
-      </div>
+     
 
-      <div className="daily-card">
-        <h4 className='w-[150px]'>IPhone 12 Pro max</h4>
-        <p>Zeeshan Ali Zafar</p>
-        <p className=' w-[110px] flex justify-center'>90000</p>
-        <p className='w-[110px] flex justify-center'>110000</p>
-       <div className='w-[50px] flex justify-center text-green-600'>$20000</div>
-    
-        <div><MdDelete /></div>
+       <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
+      </div>
+         <div className="daily-card">
+          <div className='flex items-center gap-10'>
+        <h4 className='Mobile-Width1 font-bold italic'>IPhone 12 Pro max</h4>
+         <div className='text-orange-500 text-[15px]'> PKR 90000</div></div>
+        <p className='Mobile-Width1 text-[12px] MArgincard'>Zeeshan Ali Zafar</p>
+<div className='flex gap-5 MArgincard2 '>
+
+        <div className='flex items-center Mobile-Width1'>
+  <p className=''>Profit:</p>
+          <div className='  text-green-600'>$20000</div>
+          </div>
+        <div className='flex items-center Mobile-Width1 '>
+       <p className=''>Revenue:</p>
+        <p className='text-black  font-bold'>110000</p>
+</div>
+      <div><MdDelete /></div>
+</div>
+  
       </div>
     </div>
   </div>

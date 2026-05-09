@@ -160,9 +160,10 @@
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  display: flex;
-  align-items: center;
-  gap: 20px;
+
+
+
+
 
 
     }
@@ -215,6 +216,7 @@
     .daily-card{
         width: 100% !important;
         margin: 0px;
+        gap: 5px;
 
     }
       .card p {
@@ -226,6 +228,13 @@
         padding: 0px;
     
     }
+
+    .Mobile-Width1{
+
+        max-width: 2000px;
+    }
+
+
       .stats-grid {
         gap: 10px;
        
@@ -240,5 +249,15 @@
     .LEft-sideApplyfilter{
         width: 95%;
       justify-content: end;
+    }
+    .Mobile-Width1{
+        font-size: 15px;
+        
+    }
+    .MArgincard{
+        margin-top: -2px !important;
+    }
+    .MArgincard2{
+        margin-top: -13px !important;
     }
     }
