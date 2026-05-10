@@ -17,13 +17,75 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import TablePagination from '@mui/material/TablePagination';
 import { MdDelete } from "react-icons/md";
-
+import { FaAngleUp } from "react-icons/fa";
 import IconButton from '@mui/material/IconButton';
 
 
 
 
+const DashboardRow = ({ item }) => {
+  // This state is private to THIS row only
+  const [open, setOpen] = React.useState(false);
 
+  return (
+    <>
+      <TableRow>
+        <TableCell align='center'>
+          <IconButton size="small" onClick={() => setOpen(!open)}>
+            {open ? <FaAngleUp /> : <FaAngleDown className='text-[18px]' />}
+          </IconButton>
+        </TableCell>
+        <TableCell align="center">{item.Date}</TableCell>
+        <TableCell align="center">Zeeshan Ali Zafar</TableCell>
+        <TableCell align="center">150,000</TableCell>
+        <TableCell align="center">170,000</TableCell>
+        <TableCell align="center">10,000</TableCell>
+      </TableRow>
+
+      {/* Manual Transition Row */}
+      <TableRow 
+        sx={{ 
+          visibility: open ? 'visible' : 'collapse',
+          opacity: open ? 1 : 0,
+          transition: 'opacity 0.4s ease-in-out',
+          backgroundColor: 'white',
+        
+          // Important: height 0 when closed
+          height: open ? 'auto' : 0 
+        }}
+      >
+      
+        <TableCell sx={{fontWeight:"bold"}} align='center'>Product Name</TableCell>
+        <TableCell sx={{fontWeight:"bold"}} align='center'>Customer</TableCell>
+        <TableCell sx={{fontWeight:"bold"}} align='center'>Actual Price</TableCell>
+        <TableCell sx={{fontWeight:"bold"}} align='center'>Sold Price</TableCell>
+        <TableCell sx={{fontWeight:"bold"}} align='center'>Profit</TableCell>
+           <TableCell sx={{fontWeight:"bold"}} align='center'>Description</TableCell>
+
+
+      
+      </TableRow>
+           <TableRow   sx={{ 
+          visibility: open ? 'visible' : 'collapse',
+          opacity: open ? 1 : 0,
+          transition: 'opacity 0.4s ease-in-out',
+          backgroundColor: 'white',
+        
+          // Important: height 0 when closed
+          height: open ? 'auto' : 0 
+        }}>
+
+<TableCell  align='center'>IPhone 13 Pro max</TableCell>
+        <TableCell  align='center'>Zeeshan Ali Zafar</TableCell>
+        <TableCell  align='center'>150,000</TableCell>
+        <TableCell  align='center'>170,000</TableCell>
+        <TableCell align='center'>20,000</TableCell>
+           <TableCell  align='center'>847584</TableCell>
+
+           </TableRow>
+    </>
+  );
+};
 
 
 function Header() {
@@ -182,123 +244,15 @@ apple === true ?
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Profit</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
-        {datafor.map((item)=>(
-
-            <TableRow
-            
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-             <TableCell align='center'>
-
-            <IconButton>
-
-                {open===false? <FaAngleDown className='text-[18px]'/>:""}
-            </IconButton>
-
-        </TableCell>
-              <TableCell align="center">{item.Date}</TableCell>
-                   <TableCell align="center">Zeeshan Ali Zafar</TableCell>
-              <TableCell align="center">150,000</TableCell>
-              <TableCell align="center">170,000</TableCell>
-              <TableCell align="center">10,000</TableCell>
-            </TableRow>
-))}
 
 
-
-  <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-          <Collapse  timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 1 }}>
-              <Typography variant="h6" gutterBottom component="div">
-                History
-              </Typography>
-              <Table size="small" aria-label="purchases">
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Customer</TableCell>
-                    <TableCell align="center">Amount</TableCell>
-                    <TableCell align="center">Total price ($)</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-           
-                    <TableRow >
-                      <TableCell component="th" scope="row"></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell align="center"></TableCell>
-                      <TableCell align="center">
-                  
-                      </TableCell>
-                    </TableRow>
-             
-                </TableBody>
-              </Table>
-            </Box>
-          </Collapse>
-        </TableCell>
-      </TableRow>
+       <TableBody>
+  {datafor.map((item, index) => (
+    <DashboardRow key={index} item={item} />
+  ))}
+</TableBody>
 
 
-
-
-
-      <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-        <TableCell align='center'>
-
-            <IconButton>
-
-                {open===false? <FaAngleDown className='text-[18px]'/>:""}
-            </IconButton>
-
-        </TableCell>
-        <TableCell align='center' component="th" scope="row">
-        12-May-2026
-        </TableCell>
-        <TableCell align="center">20</TableCell>
-        <TableCell align="center">150,000</TableCell>
-        <TableCell align="center">200,000</TableCell>
-        <TableCell align="center">50,000</TableCell>
-      </TableRow>
-      <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 1 }}>
-              <Typography variant="h6" gutterBottom component="div">
-                History
-              </Typography>
-              <Table size="small" aria-label="purchases">
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Customer</TableCell>
-                    <TableCell align="center">Amount</TableCell>
-                    <TableCell align="center">Total price ($)</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                    <TableRow >
-                      <TableCell component="th" scope="row">
-                
-                      </TableCell>
-                      <TableCell></TableCell>
-                      <TableCell align="center"></TableCell>
-                      <TableCell align="center">
-                  
-                      </TableCell>
-                    </TableRow>
-        
-                </TableBody>
-              </Table>
-            </Box>
-          </Collapse>
-        </TableCell>
-      </TableRow>
-           
-  
-        </TableBody>
       </Table>
     </TableContainer>
 
