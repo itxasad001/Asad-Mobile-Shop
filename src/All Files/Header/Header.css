@@ -165,7 +165,14 @@
 
 
 
-
+   transition: transform 0.3s ease;
+    }
+    .Table-Header{
+      padding: 20px;
+      border-radius: 20px;
+      font-weight: bold ;
+      font-size: 22px;
+      width: 100% !important;
     }
 
     .daily-card h4 {
@@ -175,6 +182,7 @@
     .daily-card:hover{
         transform: translateY(-4px);
         cursor: pointer;
+        transform: translateY(-5px);
     }
 
     .daily-card p {
@@ -261,3 +269,41 @@
         margin-top: -13px !important;
     }
     }
+
+
+
+    table th{
+
+
+      padding: 20px;
+    }
+    .Apple{
+      transition: transform 0.3s ease;
+    }
+    table td{
+
+
+      padding: 20px;
+
+    
+    }
+    table td:last-child{
+      display: flex;
+      justify-content: center;
+    }
+
+    table tr{
+
+      transition: transform 0.3s ease ;
+
+    }
+    table tr:hover{
+  transform:translateY(-5px);
+    }
+    .DropDown {
+      margin-left: 30px !important;
+    }
+
+   
+
+   
