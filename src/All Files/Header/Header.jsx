@@ -3,6 +3,19 @@ import './Header.css'
 import PropTypes from 'prop-types';
 import { FaAngleDown } from "react-icons/fa";
 
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemButton from '@mui/material/ListItemButton';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+
+import CloseIcon from '@mui/icons-material/Close';
+import Slide from '@mui/material/Slide';
+
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -37,9 +50,9 @@ const DashboardRow = ({ item }) => {
         </TableCell>
         <TableCell align="center">{item.Date}</TableCell>
         <TableCell align="center">Zeeshan Ali Zafar</TableCell>
-        <TableCell align="center">150,000</TableCell>
-        <TableCell align="center">170,000</TableCell>
-        <TableCell align="center">10,000</TableCell>
+        <TableCell align="center" >$150,000</TableCell>
+        <TableCell align="center">$170,000</TableCell>
+        <TableCell align="center" sx={{color:"green"}}>$10,000</TableCell>
       </TableRow>
 
       {/* Manual Transition Row */}
@@ -55,12 +68,12 @@ const DashboardRow = ({ item }) => {
         }}
       >
       
-        <TableCell sx={{fontWeight:"bold"}} align='center'>Product Name</TableCell>
-        <TableCell sx={{fontWeight:"bold"}} align='center'>Customer</TableCell>
-        <TableCell sx={{fontWeight:"bold"}} align='center'>Actual Price</TableCell>
-        <TableCell sx={{fontWeight:"bold"}} align='center'>Sold Price</TableCell>
-        <TableCell sx={{fontWeight:"bold"}} align='center'>Profit</TableCell>
-           <TableCell sx={{fontWeight:"bold"}} align='center'>Description</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Product Name</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Customer</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Actual Price</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sold Price</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profit</TableCell>
+           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Description</TableCell>
 
 
       
@@ -77,9 +90,9 @@ const DashboardRow = ({ item }) => {
 
 <TableCell  align='center'>IPhone 13 Pro max</TableCell>
         <TableCell  align='center'>Zeeshan Ali Zafar</TableCell>
-        <TableCell  align='center'>150,000</TableCell>
-        <TableCell  align='center'>170,000</TableCell>
-        <TableCell align='center'>20,000</TableCell>
+        <TableCell  align='center'>$150,000</TableCell>
+        <TableCell  align='center'>$170,000</TableCell>
+        <TableCell align='center' sx={{color:"green"}}>$20,000</TableCell>
            <TableCell  align='center'>847584</TableCell>
 
            </TableRow>
@@ -87,8 +100,17 @@ const DashboardRow = ({ item }) => {
   );
 };
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
+ 
 function Header() {
+
+
+
+
+  
     const [page, setPage] = React.useState(4);
 
     const datafor = [
@@ -154,6 +176,13 @@ function Header() {
     </div>
   </div>
 
+
+<div className='flex items-center justify-center gap-4 '>
+
+  <div>
+<Button variant="contained">Add Data</Button>
+  </div>
+
   <div className='flex justify-end pl-8 LEft-sideApplyfilter'>
     
     
@@ -165,7 +194,10 @@ function Header() {
 
     }}
     
-    className='text-blue-400 cursor-pointer underline font-bold text-[15px] mb-5 MArgin-Filter '>{filter}</button></div>
+    className='text-blue-400 cursor-pointer underline font-bold text-[15px] MArgin-Filter '>{filter}</button></div>
+
+</div>
+
 {
 apple === true ? 
   <div className="filter-bar">
@@ -195,7 +227,6 @@ apple === true ?
   </div>
 :""
 }
-
 
 
   <div className="date-section">
