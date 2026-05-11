@@ -34,12 +34,32 @@ import { MdDelete } from "react-icons/md";
 import { FaAngleUp } from "react-icons/fa";
 import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 
 
 
 const DashboardRow = ({ item }) => {
-  // This state is private to THIS row only
+
+
+  
+  useEffect(()=>{
+
+    axios.get('http://localhost:8000/api/form/form-subget').then(res=> {
+      setsubdata(res.data.data)
+
+    }).catch(err => err)
+
+  },[])
+
+
+  const [subdata , setsubdata]=useState([])
+
+  console.log("Data",subdata)
+
+
+
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -80,6 +100,8 @@ const DashboardRow = ({ item }) => {
 
       
       </TableRow>
+
+      {subdata.map((elements)=>(
            <TableRow   sx={{ 
           visibility: open ? 'visible' : 'collapse',
           opacity: open ? 1 : 0,
@@ -90,14 +112,18 @@ const DashboardRow = ({ item }) => {
           height: open ? 'auto' : 0 
         }}>
 
-<TableCell  align='center'>IPhone 13 Pro max</TableCell>
-        <TableCell  align='center'>Zeeshan Ali Zafar</TableCell>
-        <TableCell  align='center'>$150,000</TableCell>
-        <TableCell  align='center'>$170,000</TableCell>
+          
+
+        <TableCell sx={{paddingLeft:"50px", width:"200px"}}  align='start'>{elements.product}</TableCell>
+        <TableCell  align='center'>{elements.customer}</TableCell>
+        <TableCell  align='center'>{elements.price}</TableCell>
+        <TableCell  align='center'>{elements.sold}</TableCell>
         <TableCell align='center' sx={{color:"green"}}>$20,000</TableCell>
-           <TableCell  align='center'>847584</TableCell>
+           <TableCell  align='center'>{elements.desc}</TableCell>
 
            </TableRow>
+           
+          )) }
     </>
   );
 };
@@ -108,6 +134,60 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
  
 function Header() {
+
+
+
+  const [formdata, setformdata]=useState({
+    product:"",
+    customer:"",
+    price:"",
+    sold:"",
+    desc:""
+  })
+
+
+  const OnChange = (e)=>{
+
+    const {name, value}=e.target
+
+    setformdata(prev => ({
+
+      ...prev,
+      [name]:value
+
+
+    }))
+
+    console.log(formdata)
+
+
+
+
+
+  }
+
+
+
+  const onSubmit = ()=>{
+
+axios.post('http://localhost:8000/api/form/form-post',formdata).then(res => {
+  console.log(res.data)
+})
+.catch(err => err)
+    
+
+
+
+
+  }
+
+
+
+
+
+
+
+
 
 
   const handleClickOpen = () => {
@@ -188,7 +268,11 @@ function Header() {
 <div className='flex items-center justify-center gap-4 '>
 
   <div>
-<Button onClick={()=>{setOpen(true)}}  variant="contained"><Link to="">Add Data</Link></Button>
+<Button onClick={()=>{setOpen(true)
+
+
+
+}}  variant="contained"><Link to="">Add Data</Link></Button>
 
 {open === true?
   <React.Fragment>
@@ -205,12 +289,14 @@ function Header() {
               autoFocus
               required
               margin="dense"
-              id="name"
+              id="product"
               name="product"
               label="Product"
               type="text"
               fullWidth
               variant="standard"
+             onChange={OnChange}
+             value={formdata.product}
             />
           </form>
                 <form  id="subscription-form">
@@ -219,26 +305,32 @@ function Header() {
               autoFocus
               required
               margin="dense"
-              id="name"
-              name="Customer"
+              id="customer"
+              name="customer"
               label="Customer Name"
               type="text"
               fullWidth
               variant="standard"
+                    onChange={OnChange}
+             value={formdata.customer}
             />
           </form>
                      <form  id="subscription-form">
      
             <TextField
+
+            onChange={OnChange}
               autoFocus
               required
               margin="dense"
               id="price"
-              name="Price"
+              name="price"
               label="Actual Price"
               type="text"
               fullWidth
               variant="standard"
+                    onChange={OnChange}
+             value={formdata.price}
             />
           </form>
                      <form  id="subscription-form">
@@ -248,11 +340,13 @@ function Header() {
               required
               margin="dense"
               id="sold"
-              name="Sold"
+              name="sold"
               label="Sold Price"
               type="text"
               fullWidth
               variant="standard"
+                    onChange={OnChange}
+             value={formdata.sold}
             />
           </form>
 
@@ -263,11 +357,13 @@ function Header() {
               required
               margin="dense"
               id="desc"
-              name="Description"
+              name="desc"
               label="Description"
               type="text"
               fullWidth
               variant="standard"
+                    onChange={OnChange}
+             value={formdata.desc}
             />
           </form>
 
@@ -276,7 +372,7 @@ function Header() {
         </DialogContent>
         <DialogActions>
           <Button  onClick={handleClose} variant='contained' color='secondary'>Cancel</Button>
-               <Button variant="contained" onClick={handleClose} >
+               <Button variant="contained" onClick={onSubmit} >
             ADD DATA
           </Button>
         </DialogActions>
