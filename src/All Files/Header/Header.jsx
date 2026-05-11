@@ -3,17 +3,18 @@ import './Header.css'
 import PropTypes from 'prop-types';
 import { FaAngleDown } from "react-icons/fa";
 
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemButton from '@mui/material/ListItemButton';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
+
 
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
+
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 
 import Table from '@mui/material/Table';
@@ -32,6 +33,7 @@ import TablePagination from '@mui/material/TablePagination';
 import { MdDelete } from "react-icons/md";
 import { FaAngleUp } from "react-icons/fa";
 import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
 
 
 
@@ -108,9 +110,15 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 function Header() {
 
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
 
-  
+ 
     const [page, setPage] = React.useState(4);
 
     const datafor = [
@@ -180,7 +188,101 @@ function Header() {
 <div className='flex items-center justify-center gap-4 '>
 
   <div>
-<Button variant="contained">Add Data</Button>
+<Button onClick={()=>{setOpen(true)}}  variant="contained"><Link to="">Add Data</Link></Button>
+
+{open === true?
+  <React.Fragment>
+     
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle sx={{fontWeight:"bold"}}>Add Information</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+         
+          </DialogContentText>
+          <form  id="subscription-form">
+     
+            <TextField
+              autoFocus
+              required
+              margin="dense"
+              id="name"
+              name="product"
+              label="Product"
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+          </form>
+                <form  id="subscription-form">
+     
+            <TextField
+              autoFocus
+              required
+              margin="dense"
+              id="name"
+              name="Customer"
+              label="Customer Name"
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+          </form>
+                     <form  id="subscription-form">
+     
+            <TextField
+              autoFocus
+              required
+              margin="dense"
+              id="price"
+              name="Price"
+              label="Actual Price"
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+          </form>
+                     <form  id="subscription-form">
+     
+            <TextField
+              autoFocus
+              required
+              margin="dense"
+              id="sold"
+              name="Sold"
+              label="Sold Price"
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+          </form>
+
+                     <form  id="subscription-form">
+     
+            <TextField
+              autoFocus
+              required
+              margin="dense"
+              id="desc"
+              name="Description"
+              label="Description"
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+          </form>
+
+
+
+        </DialogContent>
+        <DialogActions>
+          <Button  onClick={handleClose} variant='contained' color='secondary'>Cancel</Button>
+               <Button variant="contained" onClick={handleClose} >
+            ADD DATA
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </React.Fragment>:""
+}
   </div>
 
   <div className='flex justify-end pl-8 LEft-sideApplyfilter'>
