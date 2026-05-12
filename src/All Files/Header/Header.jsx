@@ -85,11 +85,11 @@ const DashboardRow = ({ item }) => {
             {open ? <FaAngleUp /> : <FaAngleDown className='text-[18px]' />}
           </IconButton>
         </TableCell>
-        <TableCell align="center">{item.Date}</TableCell>
-        <TableCell align="center">{data.sales}</TableCell>
-        <TableCell align="center" >${data.price}</TableCell>
-        <TableCell align="center">${data.sold}</TableCell>
-        <TableCell align="center" sx={{color:"green"}}>${data.profit}</TableCell>
+        <TableCell align="center">{item._id}</TableCell>
+        <TableCell align="center">{item.sales}</TableCell>
+        <TableCell align="center" >${item.price?.toLocaleString()}</TableCell>
+        <TableCell align="center">${item.sold?.toLocaleString()}</TableCell>
+        <TableCell align="center" sx={{color:"green"}}>${item.price?.toLocaleString()}</TableCell>
       </TableRow>
 
       {/* Manual Transition Row */}
@@ -116,7 +116,7 @@ const DashboardRow = ({ item }) => {
       
       </TableRow>
 
-      {subdata.map((elements)=>(
+      {item.records.map((elements)=>(
            <TableRow   sx={{ 
           visibility: open ? 'visible' : 'collapse',
           opacity: open ? 1 : 0,
@@ -232,20 +232,25 @@ axios.post('http://localhost:8000/api/form/form-post',formdata).then(res => {
  
     const [page, setPage] = React.useState(4);
 
-    const datafor = [
-        {Date:"12-May-2026"},
-           {Date:"13-May-2026"},
-              {Date:"14-May-2026"},
-                 {Date:"15-May-2026"},
-                    {Date:"16-May-2026"},
-                       {Date:"17-May-2026"},
-                       {Date:"12-May-2026"},
-           {Date:"18-May-2026"},
-              {Date:"19-May-2026"},
-                 {Date:"20-May-2026"},
-                    {Date:"21-May-2026"},
-                       {Date:"22-May-2026"}
-    ]
+    const [datafor, setdatafor]=useState([])
+
+useEffect(()=>{
+    axios.get('http://localhost:8000/api/form/form-datesget')
+      .then(res=> {
+        setdatafor(res.data.data)
+
+
+      }).catch(err => err)
+},[])
+
+
+        console.log("New All Data",datafor)
+
+
+
+
+
+  
 
 
       const handleChangeRowsPerPage = (event) => {
@@ -279,19 +284,19 @@ axios.post('http://localhost:8000/api/form/form-post',formdata).then(res => {
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
       <h3 >Total Sales</h3>
-      <p className='text-[10px]'>{data.sales}</p>
+      <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
       <h3>Revenue</h3>
-      <p>${data.sold}</p>
+      <p>${data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
       <h3>Total Profit</h3>
-      <p>${data.profit}</p>
+      <p>${data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
       <h3>Total Cost</h3>
-      <p>${data.price}</p>
+      <p>${data.price?.toLocaleString()}</p>
     </div>
   </div>
 
