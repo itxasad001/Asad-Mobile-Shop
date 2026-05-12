@@ -48,7 +48,7 @@ const DashboardRow = ({ item }) => {
   
   useEffect(()=>{
 
-    axios.get('http://localhost:8000/api/form/form-subget').then(res=> {
+    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-subget').then(res=> {
       setsubdata(res.data.data)
 
     }).catch(err => err)
@@ -57,7 +57,7 @@ const DashboardRow = ({ item }) => {
 
     useEffect(()=>{
 
-    axios.get('http://localhost:8000/api/form/form-get').then(res=> {
+    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -158,7 +158,7 @@ const [data,setdata]=useState({})
 
       useEffect(()=>{
 
-    axios.get('http://localhost:8000/api/form/form-get').then(res=> {
+    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -201,7 +201,7 @@ const [data,setdata]=useState({})
 
   const onSubmit = ()=>{
 
-axios.post('http://localhost:8000/api/form/form-post',formdata).then(res => {
+axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',formdata).then(res => {
   console.log(res.data)
 })
 .catch(err => err)
@@ -235,7 +235,7 @@ axios.post('http://localhost:8000/api/form/form-post',formdata).then(res => {
     const [datafor, setdatafor]=useState([])
 
 useEffect(()=>{
-    axios.get('http://localhost:8000/api/form/form-datesget')
+    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
       .then(res=> {
         setdatafor(res.data.data)
 
