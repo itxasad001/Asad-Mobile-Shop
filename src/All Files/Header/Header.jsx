@@ -43,6 +43,8 @@ import { useEffect } from 'react';
 const DashboardRow = ({ item }) => {
 
 
+  const [data, setdata]=useState({})
+
   
   useEffect(()=>{
 
@@ -52,6 +54,19 @@ const DashboardRow = ({ item }) => {
     }).catch(err => err)
 
   },[])
+
+    useEffect(()=>{
+
+    axios.get('http://localhost:8000/api/form/form-get').then(res=> {
+      setdata(res.data)
+
+    }).catch(err => err)
+
+  },[])
+
+
+  console.log("Total Data",data)
+
 
 
   const [subdata , setsubdata]=useState([])
@@ -71,10 +86,10 @@ const DashboardRow = ({ item }) => {
           </IconButton>
         </TableCell>
         <TableCell align="center">{item.Date}</TableCell>
-        <TableCell align="center">Zeeshan Ali Zafar</TableCell>
-        <TableCell align="center" >$150,000</TableCell>
-        <TableCell align="center">$170,000</TableCell>
-        <TableCell align="center" sx={{color:"green"}}>$10,000</TableCell>
+        <TableCell align="center">{data.sales}</TableCell>
+        <TableCell align="center" >${data.price}</TableCell>
+        <TableCell align="center">${data.sold}</TableCell>
+        <TableCell align="center" sx={{color:"green"}}>${data.profit}</TableCell>
       </TableRow>
 
       {/* Manual Transition Row */}
@@ -116,9 +131,9 @@ const DashboardRow = ({ item }) => {
 
         <TableCell sx={{paddingLeft:"50px", width:"200px"}}  align='start'>{elements.product}</TableCell>
         <TableCell  align='center'>{elements.customer}</TableCell>
-        <TableCell  align='center'>{elements.price}</TableCell>
-        <TableCell  align='center'>{elements.sold}</TableCell>
-        <TableCell align='center' sx={{color:"green"}}>$20,000</TableCell>
+        <TableCell  align='center'>${elements.price}</TableCell>
+        <TableCell  align='center'>${elements.sold}</TableCell>
+        <TableCell align='center' sx={{color:"green"}}>${elements.profit}</TableCell>
            <TableCell  align='center'>{elements.desc}</TableCell>
 
            </TableRow>
@@ -136,6 +151,22 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 function Header() {
 
 
+
+
+const [data,setdata]=useState({})
+
+
+      useEffect(()=>{
+
+    axios.get('http://localhost:8000/api/form/form-get').then(res=> {
+      setdata(res.data)
+
+    }).catch(err => err)
+
+  },[])
+
+
+  console.log("Total Data",data)
 
   const [formdata, setformdata]=useState({
     product:"",
@@ -248,19 +279,19 @@ axios.post('http://localhost:8000/api/form/form-post',formdata).then(res => {
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
       <h3 >Total Sales</h3>
-      <p className='text-[10px]'>10</p>
+      <p className='text-[10px]'>{data.sales}</p>
     </div>
     <div className="card revenue w-[45%]">
       <h3>Revenue</h3>
-      <p>$880,000</p>
+      <p>${data.sold}</p>
     </div>
     <div className="card profit w-[45%]">
       <h3>Total Profit</h3>
-      <p>$160,000</p>
+      <p>${data.profit}</p>
     </div>
     <div className="card extra w-[45%]">
       <h3>Total Cost</h3>
-      <p>$720,000</p>
+      <p>${data.price}</p>
     </div>
   </div>
 
