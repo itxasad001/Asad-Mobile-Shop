@@ -283,6 +283,7 @@ http://localhost:8000/api/form/form-datesget
 
 axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',formdata).then(res => {
   console.log(res.data)
+  setOpen(false)
 })
 .catch(err => err)
     
