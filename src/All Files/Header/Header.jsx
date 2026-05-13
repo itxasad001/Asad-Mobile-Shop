@@ -48,7 +48,7 @@ const DashboardRow = ({ item }) => {
   
   useEffect(()=>{
 
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-subget').then(res=> {
+    axios.get('http://localhost:8000/api/form/form-subget').then(res=> {
       setsubdata(res.data.data)
 
     }).catch(err => err)
@@ -57,7 +57,7 @@ const DashboardRow = ({ item }) => {
 
     useEffect(()=>{
 
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(res=> {
+    axios.get('http://localhost:8000/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -77,6 +77,23 @@ const DashboardRow = ({ item }) => {
 
   const [open, setOpen] = React.useState(false);
 
+
+const [deleterecord ,setdeleterecord] = useState({
+
+})
+
+const deletingdata = (ball) =>{
+
+  
+  console.log("balllllllllll",ball)
+
+}
+
+
+
+
+
+
   return (
     <>
       <TableRow>
@@ -90,6 +107,7 @@ const DashboardRow = ({ item }) => {
         <TableCell align="center" >${item.price?.toLocaleString()}</TableCell>
         <TableCell align="center">${item.sold?.toLocaleString()}</TableCell>
         <TableCell align="center" sx={{color:"green"}}>${item.price?.toLocaleString()}</TableCell>
+         <TableCell align="center" sx={{color:"green"}}>${item._id}</TableCell>
       </TableRow>
 
       {/* Manual Transition Row */}
@@ -111,6 +129,7 @@ const DashboardRow = ({ item }) => {
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sold Price</TableCell>
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profit</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Description</TableCell>
+           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
 
       
@@ -135,6 +154,30 @@ const DashboardRow = ({ item }) => {
         <TableCell  align='center'>${elements.sold}</TableCell>
         <TableCell align='center' sx={{color:"green"}}>${elements.profit}</TableCell>
            <TableCell  align='center'>{elements.desc}</TableCell>
+             <TableCell  align='center'>
+              <Button onClick={()=>{
+
+                console.log(elements._id)
+
+                axios.delete("http://localhost:8000/api/form/form-subdelete",{
+                  params:{
+                    _id:elements._id
+                  }
+                })
+                .then(res=> {
+                  console.log(res.data)
+                  alert("Record Delete Successfully")
+                })
+                .catch(err => err)
+             
+
+              }}>
+               { elements._id}
+
+
+              </Button>
+              
+              </TableCell>
 
            </TableRow>
            
@@ -158,7 +201,7 @@ const [data,setdata]=useState({})
 
       useEffect(()=>{
 
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(res=> {
+    axios.get('http://localhost:8000/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -197,11 +240,15 @@ const [data,setdata]=useState({})
 
   }
 
+  /*
+http://localhost:8000
 
+http://localhost:8000/api/form/form-datesget
 
+*/
   const onSubmit = ()=>{
 
-axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',formdata).then(res => {
+axios.post('http://localhost:8000/api/form/form-post',formdata).then(res => {
   console.log(res.data)
 })
 .catch(err => err)
@@ -235,8 +282,10 @@ axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',form
     const [datafor, setdatafor]=useState([])
 
 useEffect(()=>{
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
+    axios.get('http://localhost:8000/api/form/form-datesget')
       .then(res=> {
+
+
         setdatafor(res.data.data)
 
 
@@ -263,6 +312,130 @@ useEffect(()=>{
   };
 
 
+
+  const onspecificdays = (e)=>{
+
+    const selectValue = e.target.value
+    localStorage.setItem("days",selectValue)
+
+    axios.get('http://localhost:8000/api/form/form-sevenget',{
+      params:{
+        days:selectValue
+      }
+
+    }).then(res =>{ 
+      console.log("res",res.data)
+
+       const apple = res.data.data
+
+      if(apple && apple.length > 0){
+      setdatafor(res.data?.data)
+      setdata(res.data?.data[0])
+
+      }
+       else {
+    setdata({
+      price:"0",
+      sold:"0",
+      profit:"0",
+      sales:"0",
+    }); 
+    setdatafor(null)
+  }
+      
+
+    
+    }).catch(err => err)
+
+
+
+  }
+
+  const onspecificdate = (e)=>{
+
+
+
+
+
+
+    const datevalue = e.target.value
+
+    localStorage.setItem("date",datevalue)
+
+
+    axios.get('http://localhost:8000/api/form/form-date',{
+
+      params:{
+        date:datevalue
+      }
+
+
+
+    }).then(res =>{ 
+
+
+
+
+      console.log("specific date",res.data)
+
+      const apple = res.data.data
+
+      if(apple && apple.length > 0){
+      setdatafor(res.data?.data)
+      setdata(res.data?.data[0])
+
+      }
+       else {
+    setdata({
+      price:"0",
+      sold:"0",
+      profit:"0",
+      sales:"0",
+    });
+    setdatafor(null)
+  }
+      
+    
+    }).catch(err => err)
+
+
+  }
+  
+
+
+ const onyearchange =  (e)=>{
+
+      const value = e.target.value
+   
+
+      axios.get("http://localhost:8000/api/form/form-year",{
+        params:{
+          year:value
+        }
+      }).then(res =>{ console.log(res)
+        const result = res.data.data
+
+        if(result && result.length >0){
+
+       
+        setdata(res.data.data[0])
+        setdatafor(res.data.data)}
+        else{
+         setdata({
+      price:"0",
+      sold:"0",
+      profit:"0",
+      sales:"0",
+    })}
+        
+      }
+    )
+      .catch(err => err)
+
+
+
+
+    }
 
   const [apple , setapple]=useState(false)
   const [filter, setfilter]=useState("Apply Filter")
@@ -435,7 +608,7 @@ useEffect(()=>{
 {
 apple === true ? 
   <div className="filter-bar">
-    <input type="date"/>
+    <input type="date" onChange={onspecificdate}/>
     
     <select>
       <option>Month</option>
@@ -444,17 +617,20 @@ apple === true ?
       <option>March</option>
     </select>
 
-    <select>
+    <select onChange={onyearchange}>
       <option>Year</option>
-      <option>2024</option>
-      <option>2025</option>
-      <option>2026</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+      <option value="2026">2026</option>
+       <option value="2027">2027</option>
+        <option value="2028">2028</option>
     </select>
 
-    <select>
-      <option>Last 7 Days</option>
-      <option>Last 15 Days</option>
-      <option>Last 30 Days</option>
+    <select onChange={onspecificdays} >
+          <option  >Last Days</option>
+      <option  value={7} >Last 7 Days</option>
+      <option value={15} >Last 15 Days</option>
+      <option value={30} >Last 30 Days</option>
     </select>
 
     <button>Apply Filters</button>
@@ -505,16 +681,19 @@ apple === true ?
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
             <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Sales</TableCell>
             <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">T.Actual Cost</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Sale Cost</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Sale</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Profit</TableCell>
+                  <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
 
 
        <TableBody>
-  {datafor.map((item, index) => (
+    
+  {datafor?.map((item, index) => (
     <DashboardRow key={index} item={item} />
   ))}
+
 </TableBody>
 
 
