@@ -313,3 +313,6 @@
     .MArgin-left-insta{
       margin-left: 5px;
     }
+    .Marginrigght{
+      padding-left: -20px !important;
+    }
