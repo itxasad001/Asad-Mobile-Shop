@@ -3,6 +3,8 @@ import './Header.css'
 import PropTypes from 'prop-types';
 import { FaAngleDown } from "react-icons/fa";
 
+import instagram from './Image/instagram-logo_1080029-106-removebg-preview.png'
+import Snapchat from './Image/sdjsakdaaskda-removebg-preview.png'
 
 
 import CloseIcon from '@mui/icons-material/Close';
@@ -39,6 +41,7 @@ import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect } from 'react';
+
 
 
 
@@ -834,6 +837,22 @@ apple === true ?
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
 
+
+
+<div className='Footer-Margin gap-1 jusce'>
+  <div className='flex items-center justify-center '>
+     <div> <Link to="https://www.facebook.com/itx.asad.khan.lodhi"> <img className='w-[20px] h-[20px] shadow-md' src='https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original' />
+ </Link>  
+ 
+ </div> 
+ <Link to="https://www.instagram.com/itx_asad001"><img className='w-[20px] h-[20px] shadow-md ml-2 MArgin-left-insta' src={instagram} />
+    
+    </Link>
+    <Link to="https://www.linkedin.com/in/asad-khan-lodhi-9b6523282"> <img className='w-[25px] h-[25px] shadow-md' src='https://static.vecteezy.com/system/resources/thumbnails/023/986/970/small/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png' />
+    </Link>
+    <img className='w-[30px] h-[35px] shadow-md' src={Snapchat} />
+</div>
+     </div>
 
 
 
