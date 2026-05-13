@@ -52,24 +52,7 @@ const DashboardRow = ({ item }) => {
   const [data, setdata]=useState({})
 
   
-  useEffect(()=>{
-
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-subget').then(res=> {
-      setsubdata(res.data.data)
-
-    }).catch(err => err)
-
-  },[])
-
-    useEffect(()=>{
-
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(res=> {
-      setdata(res.data)
-
-    }).catch(err => err)
-
-  },[])
-
+ 
 
   console.log("Total Data",data)
 
@@ -198,6 +181,12 @@ const Search = localStorage.getItem("Search")
                 .then(res=> {
                   console.log(res.data)
                   alert("Record Delete Successfully")
+
+                const apple = async()=>{
+                  await fetchData()
+                  await fetchTableData()
+                }
+                
                 })
                 .catch(err => err)
              
@@ -314,6 +303,19 @@ axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',form
     const [page, setPage] = React.useState(4);
 
     const [datafor, setdatafor]=useState([])
+
+
+    const fetchData = async () => {
+  const res = await axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get')
+  setdata(res.data)
+}
+
+const fetchTableData = async () => {
+  const res = await axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
+  setdatafor(res.data.data)
+}
+
+
 
 useEffect(()=>{
     axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
@@ -818,7 +820,7 @@ apple === true ?
        <TableBody>
     
   {datafor?.map((item, index) => (
-    <DashboardRow key={index} item={item} />
+    <DashboardRow key={index} item={item} fetchData={fetchData} fetchTableData={fetchTableData} />
   ))}
 
 </TableBody>

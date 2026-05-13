@@ -94,6 +94,29 @@
   
 
 
+
+
+ useEffect(()=>{
+
+    axios.get('http://localhost:8000/api/form/form-subget').then(res=> {
+      setsubdata(res.data.data)
+
+    }).catch(err => err)
+
+  },[])
+
+    useEffect(()=>{
+
+    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(res=> {
+      setdata(res.data)
+
+    }).catch(err => err)
+
+  },[])
+
+
+  
+
     
 
 
