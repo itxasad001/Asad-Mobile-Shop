@@ -841,16 +841,16 @@ apple === true ?
 
 <div className='Footer-Margin gap-1 jusce'>
   <div className='flex items-center justify-center '>
-     <div> <Link to="https://www.facebook.com/itx.asad.khan.lodhi"> <img className='w-[25px] h-[25px] shadow-md' src='https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original' />
+     <div> <Link to="https://www.facebook.com/itx.asad.khan.lodhi"> <img className='w-[23px] h-[23px] ' src='https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original' />
  </Link>  
  
  </div> 
- <Link to="https://www.instagram.com/itx_asad001"><img className='w-[23px] h-[23px] shadow-md ml-2 MArgin-left-insta' src={instagram} />
+ <Link to="https://www.instagram.com/itx_asad001"><img className='w-[23px] h-[23px]  ml-2 MArgin-left-insta' src={instagram} />
     
     </Link>
-    <Link to="https://www.linkedin.com/in/asad-khan-lodhi-9b6523282"> <img className='w-[30px] h-[30px] shadow-md' src='https://static.vecteezy.com/system/resources/thumbnails/023/986/970/small/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png' />
+    <Link to="https://www.linkedin.com/in/asad-khan-lodhi-9b6523282"> <img className='w-[30px] h-[30px] ' src='https://static.vecteezy.com/system/resources/thumbnails/023/986/970/small/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png' />
     </Link>
-    <img className='w-[33px] h-[38px] shadow-md' src={Snapchat} />
+    <img className='w-[35px] h-[38px] ' src={Snapchat} />
 </div>
      </div>
 
