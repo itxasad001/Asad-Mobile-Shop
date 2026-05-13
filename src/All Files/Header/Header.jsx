@@ -601,7 +601,7 @@ else{  setdata({
 
 }}  variant="contained"><Link to="">Add Data</Link></Button>
 
-{open === true?
+
   <React.Fragment>
      
       <Dialog open={open} onClose={handleClose}>
@@ -704,8 +704,7 @@ else{  setdata({
           </Button>
         </DialogActions>
       </Dialog>
-    </React.Fragment>:""
-}
+    </React.Fragment>
   </div>
 
   <div className='flex justify-end pl-8 LEft-sideApplyfilter'>
