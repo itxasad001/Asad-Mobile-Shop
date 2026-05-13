@@ -628,7 +628,7 @@ else{  setdata({
                 <form  id="subscription-form">
      
             <TextField
-              autoFocus
+              
               required
               margin="dense"
               id="customer"
@@ -646,7 +646,7 @@ else{  setdata({
             <TextField
 
             onChange={OnChange}
-              autoFocus
+           
               required
               margin="dense"
               id="price"
@@ -662,7 +662,7 @@ else{  setdata({
                      <form  id="subscription-form">
      
             <TextField
-              autoFocus
+         
               required
               margin="dense"
               id="sold"
@@ -679,7 +679,7 @@ else{  setdata({
                      <form  id="subscription-form">
      
             <TextField
-              autoFocus
+           
               required
               margin="dense"
               id="desc"
