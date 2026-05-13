@@ -16,6 +16,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
+import Stack from '@mui/material/Stack';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -90,7 +93,7 @@ const deletingdata = (ball) =>{
 }
 
 
-
+const Search = localStorage.getItem("Search")
 
 
 
@@ -107,7 +110,11 @@ const deletingdata = (ball) =>{
         <TableCell align="center" >${item.price?.toLocaleString()}</TableCell>
         <TableCell align="center">${item.sold?.toLocaleString()}</TableCell>
         <TableCell align="center" sx={{color:"green"}}>${item.price?.toLocaleString()}</TableCell>
-         <TableCell align="center" sx={{color:"green"}}>${item._id}</TableCell>
+         <TableCell align="center" sx={{color:"green"}}>
+            <IconButton  >
+          <MdDelete className='text-[20px]' />
+          </IconButton>
+         </TableCell>
       </TableRow>
 
       {/* Manual Transition Row */}
@@ -148,7 +155,28 @@ const deletingdata = (ball) =>{
 
           
 
-        <TableCell sx={{paddingLeft:"50px", width:"200px"}}  align='start'>{elements.product}</TableCell>
+        <TableCell sx={{paddingLeft:"30px", width:"200px"}}  align='start'>
+          <div>{elements.product}</div>
+          
+
+
+    
+  {Search.length > 0 ? <>
+ { new Date(elements.createdAt).toLocaleString("en-US",{
+  day:"2-digit",
+  month:"short",
+  year:"2-digit",
+  hour:"2-digit",
+  minute:"2-digit",
+  hour12:true
+ })}
+ </>
+ :""
+  }
+ 
+
+         
+        </TableCell>
         <TableCell  align='center'>{elements.customer}</TableCell>
         <TableCell  align='center'>${elements.price}</TableCell>
         <TableCell  align='center'>${elements.sold}</TableCell>
@@ -172,7 +200,9 @@ const deletingdata = (ball) =>{
              
 
               }}>
-               { elements._id}
+                 <IconButton aria-label="delete">
+  <MdDelete className='text-[20px]' />
+      </IconButton>
 
 
               </Button>
@@ -329,8 +359,8 @@ useEffect(()=>{
        const apple = res.data.data
 
       if(apple && apple.length > 0){
-      setdatafor(res.data?.data)
-      setdata(res.data?.data[0])
+      setdatafor(res.data.data)
+      setdata(res.data.totalsevendaysdata[0])
 
       }
        else {
@@ -352,8 +382,6 @@ useEffect(()=>{
   }
 
   const onspecificdate = (e)=>{
-
-
 
 
 
@@ -406,6 +434,8 @@ useEffect(()=>{
  const onyearchange =  (e)=>{
 
       const value = e.target.value
+
+      localStorage.setItem("Year",value)
    
 
       axios.get("http://localhost:8000/api/form/form-year",{
@@ -443,6 +473,45 @@ useEffect(()=>{
 
   const [open, setOpen] = React.useState(false);
 
+  const onmonthChange = (e)=>{
+const month = e.target.value
+console.log(month)
+const year = localStorage.getItem("Year")
+axios.get("http://localhost:8000/api/form/form-month",{
+
+  params:{
+    month:month,
+    year:year
+  }
+
+}).then(res => {console.log(res)
+
+
+const result = res.data.data
+if(result && result.length > 0){
+  setdata(res.data.data[0])
+  setdatafor(res.data.data)
+
+}
+
+else{  setdata({
+      price:"0",
+      sold:"0",
+      profit:"0",
+      sales:"0",
+    }); }
+
+
+
+}).catch(er => err)
+
+
+
+    }
+
+
+
+
   return (
     <div>
       <div className="container">
@@ -450,7 +519,52 @@ useEffect(()=>{
 
   <div className="hero">
     <h1 className='font-bold'>Asad Mobile Shop</h1>
-    <input type="text" className="search-bar" placeholder="Search sales, revenue, date..."/>
+    <input type="text" className="search-bar"
+     placeholder="Search sales, revenue, date..."
+
+     onChange={(e)=>{
+     const value = e.target.value
+
+     localStorage.setItem("Search",value)
+
+    
+
+
+
+      axios.get('http://localhost:8000/api/form/form-search',{
+        params:{
+          search:value
+        }
+      }).then(res => {
+
+        console.log(res.data)
+        const result = res.data.data
+
+        
+        if(result && result.length > 0){
+        setdata(res.data.data[0])
+        setdatafor(res.data.data)
+      
+      }
+
+
+        else{
+           setdata({
+      price:"0",
+      sold:"0",
+      profit:"0",
+      sales:"0",
+    }); 
+
+        }
+
+      }).catch(err => err)
+    
+
+     }}
+     
+     
+     />
   </div>
 
  
@@ -610,11 +724,21 @@ apple === true ?
   <div className="filter-bar">
     <input type="date" onChange={onspecificdate}/>
     
-    <select>
+    <select onChange={onmonthChange}>
       <option>Month</option>
-      <option>January</option>
-      <option>February</option>
-      <option>March</option>
+<option value="0">January</option>
+<option value="1">February</option>
+<option value="2">March</option>
+<option value="3">April</option>
+<option value="4">May</option>
+<option value="5">June</option>
+<option value="6">July</option>
+<option value="7">August</option>
+<option value="8">September</option>
+<option value="9">October</option>
+<option value="10">November</option>
+<option value="11">December</option>
+
     </select>
 
     <select onChange={onyearchange}>
