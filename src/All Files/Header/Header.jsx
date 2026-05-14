@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Header.css'
 import PropTypes from 'prop-types';
 import { FaAngleDown } from "react-icons/fa";
@@ -9,6 +9,9 @@ import Snapchat from './Image/sdjsakdaaskda-removebg-preview.png'
 
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
+
+
+import { useNavigate } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -54,7 +57,18 @@ import { useEffect } from 'react';
 
 
 
+
 const DashboardRow = ({ item }) => {
+
+
+
+
+  const href = () =>{
+
+    window.location.href = "/";
+
+
+  }
 
 
   const [data, setdata]=useState({})
@@ -200,6 +214,9 @@ useEffect(()=>{
                   console.log(res.data)
                  toast.success("Record Delete Successfully")
 
+                 setRefresh(prev => prev + 1);
+                 href()
+
 
               localStorage.setItem("Delete",1)
                 
@@ -233,9 +250,10 @@ function Header() {
 
 
 
+  
 
 const [data,setdata]=useState({})
-
+const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
@@ -286,15 +304,43 @@ https://asad-mobile-shop-backend.vercel.app
 https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget
 
 */
-  const onSubmit = ()=>{
 
-axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',formdata).then(res => {
+
+
+  const navigate = useNavigate()
+
+  
+
+
+  const onSubmit = async()=>{
+
+ axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',formdata).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully")
   setOpen(false)
+
+
+
+  
+axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(res=> {
+      setdata(res.data)
+
+    }).catch(err => err)
+
+
+    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
+      .then(res=> {
+
+
+        setdatafor(res.data.data)
+
+
+      }).catch(err => err)
 })
 .catch(err => err)
     
+
+  
 
 
 
@@ -321,7 +367,7 @@ axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',form
  
     const [page, setPage] = React.useState(4);
 
-    const [datafor, setdatafor]=useState([])
+    
 
 
     const fetchData = async () => {
