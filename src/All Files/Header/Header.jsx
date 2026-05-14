@@ -559,12 +559,21 @@ else{  setdata({
      const value = e.target.value
 
      localStorage.setItem("Search",1)
-     if(value ==="")
+     if(value ===""){
       localStorage.setItem("Search","")
+
+      axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
+      .then(res=> {
+
+
+        setdatafor(res.data.data)
+
+
+      }).catch(err => err)
 
     
 
-
+     }
 
       axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-search',{
         params:{
@@ -592,6 +601,12 @@ else{  setdata({
       profit:"0",
       sales:"0",
     }); 
+
+
+     
+
+
+
 
         }
 
