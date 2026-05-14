@@ -46,6 +46,14 @@ import { useEffect } from 'react';
 
 
 
+
+
+
+
+
+
+
+
 const DashboardRow = ({ item }) => {
 
 
@@ -81,6 +89,12 @@ const deletingdata = (ball) =>{
 
 const Search = localStorage.getItem("Search")
 
+
+useEffect(()=>{
+
+
+
+},[])
 
 
   return (
@@ -173,7 +187,7 @@ const Search = localStorage.getItem("Search")
 
                 console.log(elements._id)
 
-                axios.delete("https://asad-mobile-shop-backend.vercel.app/api/form/form-subdelete",{
+                axios.delete("http://localhost:8000/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
@@ -182,10 +196,7 @@ const Search = localStorage.getItem("Search")
                   console.log(res.data)
                   alert("Record Delete Successfully")
 
-                const apple = async()=>{
-                  await fetchData()
-                  await fetchTableData()
-                }
+              localStorage.setItem("Delete",1)
                 
                 })
                 .catch(err => err)
@@ -223,7 +234,7 @@ const [data,setdata]=useState({})
 
       useEffect(()=>{
 
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(res=> {
+    axios.get('http://localhost:8000/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -262,6 +273,8 @@ const [data,setdata]=useState({})
 
   }
 
+  const variable = 1
+
   /*
 http://localhost:8000
 
@@ -270,7 +283,7 @@ http://localhost:8000/api/form/form-datesget
 */
   const onSubmit = ()=>{
 
-axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',formdata).then(res => {
+axios.post('http://localhost:8000/api/form/form-post',formdata).then(res => {
   console.log(res.data)
   setOpen(false)
 })
@@ -306,19 +319,26 @@ axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',form
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get')
+  const res = await axios.get('http://localhost:8000/api/form/form-get')
   setdata(res.data)
 }
 
-const fetchTableData = async () => {
-  const res = await axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
-  setdatafor(res.data.data)
+
+const deleted = localStorage.getItem("Delete")
+useEffect(()=>{
+if(deleted === "1" ){
+
+  alert("Delete")
+  localStorage.setItem("Delete",2)
+
 }
+},[])
+
 
 
 
 useEffect(()=>{
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
+    axios.get('http://localhost:8000/api/form/form-datesget')
       .then(res=> {
 
 
@@ -354,7 +374,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-sevenget',{
+    axios.get('http://localhost:8000/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -376,7 +396,7 @@ useEffect(()=>{
       profit:"0",
       sales:"0",
     }); 
-    setdatafor(null)
+  
   }
       
 
@@ -397,7 +417,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-date',{
+    axios.get('http://localhost:8000/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -426,7 +446,7 @@ useEffect(()=>{
       profit:"0",
       sales:"0",
     });
-    setdatafor(null)
+   
   }
       
     
@@ -444,7 +464,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://asad-mobile-shop-backend.vercel.app/api/form/form-year",{
+      axios.get("http://localhost:8000/api/form/form-year",{
         params:{
           year:value
         }
@@ -483,7 +503,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://asad-mobile-shop-backend.vercel.app/api/form/form-month",{
+axios.get("http://localhost:8000/api/form/form-month",{
 
   params:{
     month:month,
@@ -537,7 +557,7 @@ else{  setdata({
 
 
 
-      axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-search',{
+      axios.get('http://localhost:8000/api/form/form-search',{
         params:{
           search:value
         }
@@ -820,7 +840,7 @@ apple === true ?
        <TableBody>
     
   {datafor?.map((item, index) => (
-    <DashboardRow key={index} item={item} fetchData={fetchData} fetchTableData={fetchTableData} />
+    <DashboardRow key={index} item={item} fetchData={fetchData}  variable={variable} />
   ))}
 
 </TableBody>
