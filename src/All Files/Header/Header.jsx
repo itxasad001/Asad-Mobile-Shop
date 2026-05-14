@@ -555,6 +555,8 @@ else{  setdata({
      const value = e.target.value
 
      localStorage.setItem("Search",1)
+     if(value ==="")
+      localStorage.setItem("Search","")
 
     
 
