@@ -819,7 +819,7 @@ else{  setdata({
 {
 apple === true ? 
   <div className="filter-bar">
-    <input type="date" onChange={onspecificdate}/>
+    <input placeholder='date' type="date" onChange={onspecificdate}/>
     
     <select onChange={onmonthChange}>
       <option>Month</option>
@@ -845,6 +845,13 @@ apple === true ?
       <option value="2026">2026</option>
        <option value="2027">2027</option>
         <option value="2028">2028</option>
+        <option value="2027">2029</option>
+        <option value="2028">2030</option>
+                <option value="2027">2031</option>
+        <option value="2028">2032</option>
+              <option value="2027">2033</option>
+        <option value="2028">2034</option>
+           <option value="2027">2035</option>
     </select>
 
     <select onChange={onspecificdays} >
