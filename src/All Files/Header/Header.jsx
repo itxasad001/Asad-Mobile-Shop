@@ -569,7 +569,9 @@ else{  setdata({
       }).then(res => {
 
         console.log(res.data)
+        setOpen(false)
         const result = res.data.data
+
 
         
         if(result && result.length > 0){
