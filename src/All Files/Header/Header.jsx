@@ -87,7 +87,10 @@ const deletingdata = (ball) =>{
 }
 
 
-const Search = localStorage.getItem("Search")
+const Searchs = localStorage.getItem("Search")
+
+const Search = Number(Searchs)
+
 
 
 useEffect(()=>{
@@ -551,7 +554,7 @@ else{  setdata({
      onChange={(e)=>{
      const value = e.target.value
 
-     localStorage.setItem("Search",value)
+     localStorage.setItem("Search",1)
 
     
 
