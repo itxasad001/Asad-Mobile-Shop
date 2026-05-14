@@ -20,7 +20,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 
 import Stack from '@mui/material/Stack';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import toast, { Toaster } from 'react-hot-toast';
 
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -102,6 +102,7 @@ useEffect(()=>{
 
   return (
     <>
+    <Toaster  style={{ borderRadius: "20px" }}/>
       <TableRow>
         <TableCell align='center'>
           <IconButton size="small" onClick={() => setOpen(!open)}>
@@ -197,7 +198,8 @@ useEffect(()=>{
                 })
                 .then(res=> {
                   console.log(res.data)
-                  alert("Record Delete Successfully")
+                 toast.success("Record Delete Successfully")
+
 
               localStorage.setItem("Delete",1)
                 
@@ -288,6 +290,7 @@ https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget
 
 axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',formdata).then(res => {
   console.log(res.data)
+  toast.success("Data Added Successfully")
   setOpen(false)
 })
 .catch(err => err)
@@ -331,7 +334,7 @@ const deleted = localStorage.getItem("Delete")
 useEffect(()=>{
 if(deleted === "1" ){
 
-  alert("Delete")
+
   localStorage.setItem("Delete",2)
 
 }
@@ -543,6 +546,7 @@ else{  setdata({
 
   return (
     <div>
+       <Toaster  style={{ borderRadius: "30px" }}/>
       <div className="container">
 
 
