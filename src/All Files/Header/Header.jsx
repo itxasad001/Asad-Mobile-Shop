@@ -613,7 +613,7 @@ else{  setdata({
   <div className="hero">
     <h1 className='font-bold'>Asad Mobile Shop</h1>
     <input type="text" className="search-bar"
-     placeholder="Search sales, revenue, date..."
+     placeholder="Search product, name, sales..."
 
      onChange={(e)=>{
      const value = e.target.value
