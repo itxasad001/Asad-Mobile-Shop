@@ -760,7 +760,7 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Actual Price"
+              label="Price"
               type="text"
               fullWidth
               variant="standard"
@@ -776,7 +776,7 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="Sold Price"
+              label="Income"
               type="text"
               fullWidth
               variant="standard"
