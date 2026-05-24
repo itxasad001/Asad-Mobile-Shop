@@ -149,10 +149,10 @@ useEffect(()=>{
       >
       
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Product Name</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Customer</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Actual Price</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sold Price</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profit</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Buyer</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Item Price</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Income</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Remanings</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Description</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
@@ -205,7 +205,7 @@ useEffect(()=>{
 
                 console.log(elements._id)
 
-                axios.delete("https://asad-mobile-shop-backend.vercel.app/api/form/form-subdelete",{
+                axios.delete("https://home-analytics.vercel.app/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
@@ -257,7 +257,7 @@ const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(res=> {
+    axios.get('https://home-analytics.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -299,9 +299,9 @@ const [datafor, setdatafor]=useState([])
   const variable = 1
 
   /*
-https://asad-mobile-shop-backend.vercel.app
+https://home-analytics.vercel.app
 
-https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget
+https://home-analytics.vercel.app/api/form/form-datesget
 
 */
 
@@ -314,7 +314,7 @@ https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget
 
   const onSubmit = async()=>{
 
- axios.post('https://asad-mobile-shop-backend.vercel.app/api/form/form-post',formdata).then(res => {
+ axios.post('https://home-analytics.vercel.app/api/form/form-post',formdata).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully")
   setOpen(false)
@@ -336,13 +336,13 @@ setformdata({
 
 
   
-axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(res=> {
+axios.get('https://home-analytics.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
 
 
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
+    axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -385,7 +385,7 @@ axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get').then(
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-get')
+  const res = await axios.get('https://home-analytics.vercel.app/api/form/form-get')
   setdata(res.data)
 }
 
@@ -404,7 +404,7 @@ if(deleted === "1" ){
 
 
 useEffect(()=>{
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
+    axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -440,7 +440,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-sevenget',{
+    axios.get('https://home-analytics.vercel.app/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -483,7 +483,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-date',{
+    axios.get('https://home-analytics.vercel.app/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -530,7 +530,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://asad-mobile-shop-backend.vercel.app/api/form/form-year",{
+      axios.get("https://home-analytics.vercel.app/api/form/form-year",{
         params:{
           year:value
         }
@@ -569,7 +569,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://asad-mobile-shop-backend.vercel.app/api/form/form-month",{
+axios.get("https://home-analytics.vercel.app/api/form/form-month",{
 
   params:{
     month:month,
@@ -611,7 +611,7 @@ else{  setdata({
 
 
   <div className="hero">
-    <h1 className='font-bold'>Asad Mobile Shop</h1>
+    <h1 className='font-bold'>Home Analytics</h1>
     <input type="text" className="search-bar"
      placeholder="Search product, name, sales..."
 
@@ -622,7 +622,7 @@ else{  setdata({
      if(value ===""){
       localStorage.setItem("Search","")
 
-      axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-datesget')
+      axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -635,7 +635,7 @@ else{  setdata({
 
      }
 
-      axios.get('https://asad-mobile-shop-backend.vercel.app/api/form/form-search',{
+      axios.get('https://home-analytics.vercel.app/api/form/form-search',{
         params:{
           search:value
         }
@@ -682,19 +682,19 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >Total Sales</h3>
+      <h3 >Total Items</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>Revenue</h3>
+      <h3>Total Income</h3>
       <p>${data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Total Profit</h3>
+      <h3>Remanings</h3>
       <p>${data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
-      <h3>Total Cost</h3>
+      <h3>Total Expense</h3>
       <p>${data.price?.toLocaleString()}</p>
     </div>
   </div>
@@ -921,10 +921,10 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Sales</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">T.Actual Cost</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Sale</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Profit</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Items</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Expense</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Income</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Remanings</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
