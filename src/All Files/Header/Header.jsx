@@ -9,7 +9,7 @@ import Snapchat from './Image/sdjsakdaaskda-removebg-preview.png'
 
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
-
+import img1 from './Image/logo-home-png-7425.png'
 
 import { useNavigate } from 'react-router-dom';
 
@@ -617,7 +617,12 @@ else{  setdata({
 
 
   <div className="hero">
-    <h1 className='font-bold'>Home Analytics</h1>
+    <h1 className='font-bold'>
+      <div className='flex items-center justify-center'>
+        <div><img width={50} src={img1}/></div>
+        <div>  Home Analytics</div>
+      </div>
+    </h1>
     <input type="text" className="search-bar"
      placeholder="Search product, name, sales..."
 
