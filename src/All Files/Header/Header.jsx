@@ -44,7 +44,9 @@ import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect } from 'react';
-import logo from './Image/Design-Studio-2026-06-08 (1).png'
+
+
+
 
 
 
@@ -116,23 +118,18 @@ useEffect(()=>{
     <>
     <Toaster  style={{ borderRadius: "20px" }}/>
       <TableRow>
-        <TableCell align='center' width={20
-        }   sx={{
-    width: 180,
-    wordBreak: "break-word",
-  }}>
+        <TableCell align='center'>
           <IconButton size="small" onClick={() => setOpen(!open)}>
             {open ? <FaAngleUp /> : <FaAngleDown className='text-[18px]' />}
           </IconButton>
         </TableCell>
         <TableCell align="center">
-          { new Date(item._id).toLocaleString("en-US",{
+   { new Date(item._id).toLocaleString("en-US",{
   day:"2-digit",
   month:"short",
   year:"numeric",
 
- })}
-        </TableCell>
+ })}</TableCell>
         <TableCell align="center">{item.sales}</TableCell>
         <TableCell align="center" >${item.price?.toLocaleString()}</TableCell>
         <TableCell align="center">${item.sold?.toLocaleString()}</TableCell>
@@ -158,10 +155,10 @@ useEffect(()=>{
       >
       
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Product Name</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Customer</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Actual Price</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sold Price</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profit</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Buyer</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Item Price</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Income</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Remanings</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Description</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
@@ -214,7 +211,7 @@ useEffect(()=>{
 
                 console.log(elements._id)
 
-                axios.delete("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-subdelete",{
+                axios.delete("https://home-analytics.vercel.app/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
@@ -266,7 +263,7 @@ const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
-    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get').then(res=> {
+    axios.get('https://home-analytics.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -308,9 +305,9 @@ const [datafor, setdatafor]=useState([])
   const variable = 1
 
   /*
-https://asad-mobile-shop-backend-delta.vercel.app
+https://home-analytics.vercel.app
 
-https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget
+https://home-analytics.vercel.app/api/form/form-datesget
 
 */
 
@@ -323,7 +320,7 @@ https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget
 
   const onSubmit = async()=>{
 
- axios.post('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-post',formdata).then(res => {
+ axios.post('https://home-analytics.vercel.app/api/form/form-post',formdata).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully")
   setOpen(false)
@@ -345,13 +342,13 @@ setformdata({
 
 
   
-axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get').then(res=> {
+axios.get('https://home-analytics.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
 
 
-    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
+    axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -394,7 +391,7 @@ axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get')
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get')
+  const res = await axios.get('https://home-analytics.vercel.app/api/form/form-get')
   setdata(res.data)
 }
 
@@ -413,7 +410,7 @@ if(deleted === "1" ){
 
 
 useEffect(()=>{
-    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
+    axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -449,7 +446,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-sevenget',{
+    axios.get('https://home-analytics.vercel.app/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -492,7 +489,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-date',{
+    axios.get('https://home-analytics.vercel.app/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -539,7 +536,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-year",{
+      axios.get("https://home-analytics.vercel.app/api/form/form-year",{
         params:{
           year:value
         }
@@ -578,7 +575,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-month",{
+axios.get("https://home-analytics.vercel.app/api/form/form-month",{
 
   params:{
     month:month,
@@ -620,9 +617,7 @@ else{  setdata({
 
 
   <div className="hero">
-    <h1 className='font-bold'>
-      <img src={logo}/>
-  </h1>
+    <h1 className='font-bold'>Home Analytics</h1>
     <input type="text" className="search-bar"
      placeholder="Search product, name, sales..."
 
@@ -633,7 +628,7 @@ else{  setdata({
      if(value ===""){
       localStorage.setItem("Search","")
 
-      axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
+      axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -646,7 +641,7 @@ else{  setdata({
 
      }
 
-      axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-search',{
+      axios.get('https://home-analytics.vercel.app/api/form/form-search',{
         params:{
           search:value
         }
@@ -693,19 +688,19 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >Total Sales</h3>
+      <h3 >Total Items</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>Revenue</h3>
+      <h3>Total Income</h3>
       <p>${data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Total Profit</h3>
+      <h3>Remanings</h3>
       <p>${data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
-      <h3>Total Cost</h3>
+      <h3>Total Expense</h3>
       <p>${data.price?.toLocaleString()}</p>
     </div>
   </div>
@@ -771,7 +766,7 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Actual Price"
+              label="Price"
               type="text"
               fullWidth
               variant="standard"
@@ -787,7 +782,7 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="Sold Price"
+              label="Income"
               type="text"
               fullWidth
               variant="standard"
@@ -927,17 +922,15 @@ apple === true ?
 
 
     <TableContainer component={Paper} sx={{ maxHeight: 440 }} >
-      <Table sx={{ minWidth: 650 , fontWeight: "bold"}} aria-label="simple table"  stickyHeader 
-      
-     >
+      <Table sx={{ minWidth: 650 , fontWeight: "bold"}} aria-label="simple table" stickyHeader>
         <TableHead>
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Sales</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">T.Actual Cost</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Sale</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Profit</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Items</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Expense</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Income</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Remanings</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
@@ -969,14 +962,16 @@ apple === true ?
 
 <div className='Footer-Margin gap-1 jusce'>
   <div className='flex items-center justify-center '>
-     <div> <Link to="https://www.facebook.com/itx.asad.khan.lodhi"> <img className='w-[23px] h-[23px] ' src='https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original' />
+     <div> <Link to="https://www.facebook.com/profile.php?id=100015850997278"> <img className='w-[23px] h-[23px] ' src='https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original' />
  </Link>  
  
  </div> 
- <Link to="https://www.instagram.com/itx_asad001"><img className='w-[23px] h-[23px]  ml-2 MArgin-left-insta' src={instagram} />
+ <Link to="https://www.instagram.com/zeeshan.ali.zafar">
+ <img className='w-[23px] h-[23px]  ml-2 MArgin-left-insta' src={instagram} />
     
     </Link>
-    <Link to="https://www.linkedin.com/in/asad-khan-lodhi-9b6523282"> <img className='w-[30px] h-[30px] ' src='https://static.vecteezy.com/system/resources/thumbnails/023/986/970/small/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png' />
+    <Link to="https://www.linkedin.com/in/zeeshan-ali-zafar-22103b250">
+     <img className='w-[30px] h-[30px] ' src='https://static.vecteezy.com/system/resources/thumbnails/023/986/970/small/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png' />
     </Link>
     <img className='w-[35px] h-[38px] Marginrigght ' src={Snapchat} />
 </div>
@@ -1011,7 +1006,6 @@ apple === true ?
 
 
 export default Header
-
 
 
 
