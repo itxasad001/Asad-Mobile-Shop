@@ -440,7 +440,7 @@ axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get')
 
     }).catch(err => err)
 
-
+  setOpen(false);
     axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
       .then(res=> {
 
