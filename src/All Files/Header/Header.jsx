@@ -437,10 +437,11 @@ https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget
   
 axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
+      setOpen(false);
 
     }).catch(err => err)
 
-  setOpen(false);
+  
     axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
       .then(res=> {
 
