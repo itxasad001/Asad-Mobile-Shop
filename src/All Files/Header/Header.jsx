@@ -412,11 +412,11 @@ https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget
 
   const onSubmit = async()=>{
  const payload = {
-    product: obj[0].product,
-    customer:obj[1].customer,
-    price:obj[2].price || 0, 
-    sold: obj[3].sold || 0,  
-    desc: obj[4].desc
+    product: obj[0]?.product || "",
+    customer:obj[1]?.customer || "",
+    price:obj[2]?.price || 0, 
+    sold: obj[3]?.sold || 0,  
+    desc: obj[4]?.desc || ""
   };
     
 
