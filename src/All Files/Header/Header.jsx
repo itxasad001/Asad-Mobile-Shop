@@ -901,8 +901,9 @@ else{  setdata({
               type="text"
               fullWidth
               variant="standard"
+               onChange={OnChange5}
                    value={obj[4]}
-                    onChange={OnChange5}
+                   
             />
           </form>
 
