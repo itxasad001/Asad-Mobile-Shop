@@ -154,12 +154,12 @@ useEffect(()=>{
         }}
       >
       
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Product Name</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Buyer</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Item Price</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Income</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Remanings</TableCell>
-           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Description</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sr</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Current Job </TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Company/Dept</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Job Type</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>City</TableCell>
+           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Job Link</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
 
@@ -713,7 +713,7 @@ else{  setdata({
     <h1 className='font-bold'>
       <div className='flex items-center justify-center'>
         <div><img width={50} src={img1}/></div>
-        <div>  Home Analytics</div>
+        <div>Jobs Pakistan!</div>
       </div>
     </h1>
     <input type="text" className="search-bar"
@@ -786,11 +786,11 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >Total Items</h3>
+      <h3 >Total Jobs</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>Total Income</h3>
+      <h3>Total </h3>
       <p>${data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
@@ -1034,10 +1034,10 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Items</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Expense</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Income</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Remanings</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Jobs</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Companies</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Cities</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Links</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
