@@ -228,7 +228,7 @@ useEffect(()=>{
                 })
                 .then(res=> {
                   console.log(res.data)
-                 toast.success("Record Delete Successfully")
+                 toast.success("Record Delete Successfully!")
 
                  setRefresh(prev => prev + 1);
                  href()
