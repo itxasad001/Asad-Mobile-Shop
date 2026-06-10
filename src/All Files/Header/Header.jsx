@@ -5,7 +5,7 @@ import { FaAngleDown } from "react-icons/fa";
 
 import instagram from './Image/instagram-logo_1080029-106-removebg-preview.png'
 import Snapchat from './Image/sdjsakdaaskda-removebg-preview.png'
-
+import nextcon from './Image/pngaaa.com-1917703.png'
 
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
@@ -131,9 +131,9 @@ useEffect(()=>{
 
  })}</TableCell>
         <TableCell align="center">{item.sales}</TableCell>
-        <TableCell align="center" >${item.price?.toLocaleString()}</TableCell>
-        <TableCell align="center">${item.sold?.toLocaleString()}</TableCell>
-        <TableCell align="center" sx={{color:"green"}}>${item.profit?.toLocaleString()}</TableCell>
+        <TableCell align="center" >{item.price?.toLocaleString()}</TableCell>
+        <TableCell align="center">{item.sold?.toLocaleString()}</TableCell>
+        <TableCell align="center" sx={{color:"green"}}>{item.profit?.toLocaleString()}</TableCell>
          <TableCell align="center" sx={{color:"green"}}>
             <IconButton  >
           <MdDelete className='text-[20px]' />
@@ -166,7 +166,7 @@ useEffect(()=>{
       
       </TableRow>
 
-      {item.records.map((elements)=>(
+      {item.records.map((elements,index)=>(
            <TableRow   sx={{ 
           visibility: open ? 'visible' : 'collapse',
           opacity: open ? 1 : 0,
@@ -179,8 +179,8 @@ useEffect(()=>{
 
           
 
-        <TableCell sx={{paddingLeft:"30px", width:"200px"}}  align='start'>
-          <div>{elements.product}</div>
+        <TableCell sx={{ width:"200px"}}  align='center'>
+          <div>{index+1}</div>
           
 
 
@@ -201,17 +201,27 @@ useEffect(()=>{
 
          
         </TableCell>
+        <TableCell  align='center'>{elements.product}</TableCell>
         <TableCell  align='center'>{elements.customer}</TableCell>
-        <TableCell  align='center'>${elements.price}</TableCell>
-        <TableCell  align='center'>${elements.sold}</TableCell>
-        <TableCell align='center' sx={{color:"green"}}>${elements.profit}</TableCell>
-           <TableCell  align='center'>{elements.desc}</TableCell>
+        <TableCell  align='center'>{elements.price}</TableCell>
+        <TableCell align='center' sx={{color:"green"}}>{elements.sold}</TableCell>
+           <TableCell  align='center'>
+
+            <Link to={elements.desc} className='flex justify-center items-center w-full'>
+            {elements.desc?
+            <img className = "w-[20px] flex justify-center" src={nextcon}/>
+            :""}
+            </Link>
+           
+            
+            
+            </TableCell>
              <TableCell  align='center'>
               <Button onClick={()=>{
 
                 console.log(elements._id)
 
-                axios.delete("https://home-analytics.vercel.app/api/form/form-subdelete",{
+                axios.delete("https://backend-for-world-jobs.vercel.app/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
@@ -263,7 +273,7 @@ const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
-    axios.get('https://home-analytics.vercel.app/api/form/form-get').then(res=> {
+    axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -394,9 +404,9 @@ const [state, setstate] =useState()
   const variable = 1
 
   /*
-https://home-analytics.vercel.app
+https://backend-for-world-jobs.vercel.app
 
-https://home-analytics.vercel.app/api/form/form-datesget
+https://backend-for-world-jobs.vercel.app/api/form/form-datesget
 
 */
 
@@ -417,7 +427,7 @@ https://home-analytics.vercel.app/api/form/form-datesget
     sold: obj[3]?.sold || 0,  
     desc: obj[4]?.desc  || ""
   };
- axios.post('https://home-analytics.vercel.app/api/form/form-post',payload).then(res => {
+ axios.post('https://backend-for-world-jobs.vercel.app/api/form/form-post',payload).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully!")
   setOpen(false)
@@ -435,13 +445,13 @@ https://home-analytics.vercel.app/api/form/form-datesget
 
 
   
-axios.get('https://home-analytics.vercel.app/api/form/form-get').then(res=> {
+axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
 
 
-    axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
+    axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -484,7 +494,7 @@ axios.get('https://home-analytics.vercel.app/api/form/form-get').then(res=> {
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://home-analytics.vercel.app/api/form/form-get')
+  const res = await axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-get')
   setdata(res.data)
 }
 
@@ -503,7 +513,7 @@ if(deleted === "1" ){
 
 
 useEffect(()=>{
-    axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
+    axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -539,7 +549,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://home-analytics.vercel.app/api/form/form-sevenget',{
+    axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -582,7 +592,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://home-analytics.vercel.app/api/form/form-date',{
+    axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -629,7 +639,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://home-analytics.vercel.app/api/form/form-year",{
+      axios.get("https://backend-for-world-jobs.vercel.app/api/form/form-year",{
         params:{
           year:value
         }
@@ -668,7 +678,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://home-analytics.vercel.app/api/form/form-month",{
+axios.get("https://backend-for-world-jobs.vercel.app/api/form/form-month",{
 
   params:{
     month:month,
@@ -726,7 +736,7 @@ else{  setdata({
      if(value ===""){
       localStorage.setItem("Search","")
 
-      axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
+      axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -739,7 +749,7 @@ else{  setdata({
 
      }
 
-      axios.get('https://home-analytics.vercel.app/api/form/form-search',{
+      axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-search',{
         params:{
           search:value
         }
@@ -790,16 +800,16 @@ else{  setdata({
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>Total </h3>
-      <p>${data.sold?.toLocaleString()}</p>
+      <h3>Total Companies</h3>
+      <p>{data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Remanings</h3>
-      <p>${data.profit?.toLocaleString()}</p>
+      <h3>Total Cities</h3>
+      <p>{data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
-      <h3>Total Expense</h3>
-      <p>${data.price?.toLocaleString()}</p>
+      <h3>Total Links</h3>
+      <p>{data.price?.toLocaleString()}</p>
     </div>
   </div>
 
