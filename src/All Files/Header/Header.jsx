@@ -854,7 +854,7 @@ else{  setdata({
               fullWidth
               variant="standard"
          onChange={OnChange}
-             value={obj[0]}
+          
             />
           </form>
                 <form  id="subscription-form">
@@ -870,7 +870,7 @@ else{  setdata({
               fullWidth
               variant="standard"
                         onChange={OnChange2}
-                    value={obj[1]}
+                 
             />
           </form>
                      <form  id="subscription-form">
@@ -888,7 +888,7 @@ else{  setdata({
               fullWidth
               variant="standard"
                          onChange={OnChange3}
-            value={obj[2]}
+          
             />
           </form>
                      <form  id="subscription-form">
@@ -904,7 +904,7 @@ else{  setdata({
               fullWidth
               variant="standard"
                   onChange={OnChange4}
-                    value={obj[3]}
+                   
             />
           </form>
 
@@ -920,7 +920,7 @@ else{  setdata({
               type="text"
               fullWidth
               variant="standard"
-                    value={obj[4]}
+                
                     onChange={OnChange5}
             />
           </form>
