@@ -722,7 +722,7 @@ else{  setdata({
   <div className="hero">
     <h1 className='font-bold'>
       <div className='flex items-center justify-center'>
-        <div><img width={50} src={img1}/></div>
+      
         <div>Jobs Pakistan!</div>
       </div>
     </h1>
