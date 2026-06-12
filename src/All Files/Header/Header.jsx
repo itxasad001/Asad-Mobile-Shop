@@ -804,7 +804,7 @@ else{  setdata({
       <p>{data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Pakistan Relevat</h3>
+      <h3>Pak Relevant</h3>
       <p>{data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
