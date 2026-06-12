@@ -5,7 +5,7 @@ import { FaAngleDown } from "react-icons/fa";
 
 import instagram from './Image/instagram-logo_1080029-106-removebg-preview.png'
 import Snapchat from './Image/sdjsakdaaskda-removebg-preview.png'
-
+import nextcon from './Image/pngaaa.com-1917703.png'
 
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
@@ -131,9 +131,9 @@ useEffect(()=>{
 
  })}</TableCell>
         <TableCell align="center">{item.sales}</TableCell>
-        <TableCell align="center" >${item.price?.toLocaleString()}</TableCell>
-        <TableCell align="center">${item.sold?.toLocaleString()}</TableCell>
-        <TableCell align="center" sx={{color:"green"}}>${item.profit?.toLocaleString()}</TableCell>
+        <TableCell align="center" >{item.price?.toLocaleString()}</TableCell>
+        <TableCell align="center">{item.sold?.toLocaleString()}</TableCell>
+        <TableCell align="center" sx={{color:"green"}}>{item.profit?.toLocaleString()}</TableCell>
          <TableCell align="center" sx={{color:"green"}}>
             <IconButton  >
           <MdDelete className='text-[20px]' />
@@ -154,19 +154,19 @@ useEffect(()=>{
         }}
       >
       
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Product Name</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Buyer</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Item Price</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Income</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Remanings</TableCell>
-           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Description</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sr</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Current Job </TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Company/Dept</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Job Type</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>City</TableCell>
+           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Job Link</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
 
       
       </TableRow>
 
-      {item.records.map((elements)=>(
+      {item.records.map((elements,index)=>(
            <TableRow   sx={{ 
           visibility: open ? 'visible' : 'collapse',
           opacity: open ? 1 : 0,
@@ -179,8 +179,8 @@ useEffect(()=>{
 
           
 
-        <TableCell sx={{paddingLeft:"30px", width:"200px"}}  align='start'>
-          <div>{elements.product}</div>
+        <TableCell sx={{ width:"200px"}}  align='center'>
+          <div>{index+1}</div>
           
 
 
@@ -201,24 +201,34 @@ useEffect(()=>{
 
          
         </TableCell>
+        <TableCell  align='center'>{elements.product}</TableCell>
         <TableCell  align='center'>{elements.customer}</TableCell>
-        <TableCell  align='center'>${elements.price}</TableCell>
-        <TableCell  align='center'>${elements.sold}</TableCell>
-        <TableCell align='center' sx={{color:"green"}}>${elements.profit}</TableCell>
-           <TableCell  align='center'>{elements.desc}</TableCell>
+        <TableCell  align='center'>{elements.price}</TableCell>
+        <TableCell align='center' sx={{color:"green"}}>{elements.sold}</TableCell>
+           <TableCell  align='center'>
+
+            <Link to={elements.desc} className='flex justify-center items-center w-full'>
+            {elements.desc?
+            <img className = "w-[20px] flex justify-center" src={nextcon}/>
+            :""}
+            </Link>
+           
+            
+            
+            </TableCell>
              <TableCell  align='center'>
               <Button onClick={()=>{
 
                 console.log(elements._id)
 
-                axios.delete("https://companies-and-clients-australia.vercel.app/api/form/form-subdelete",{
+                axios.delete("https://backend-for-world-jobs.vercel.app/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
                 })
                 .then(res=> {
                   console.log(res.data)
-                 toast.success("Record Delete Successfully")
+                 toast.success("Record Delete Successfully!")
 
                  setRefresh(prev => prev + 1);
                  href()
@@ -263,7 +273,7 @@ const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
-    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get').then(res=> {
+    axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -394,9 +404,9 @@ const [state, setstate] =useState()
   const variable = 1
 
   /*
-https://companies-and-clients-australia.vercel.app
+https://backend-for-world-jobs.vercel.app
 
-https://companies-and-clients-australia.vercel.app/api/form/form-datesget
+https://backend-for-world-jobs.vercel.app/api/form/form-datesget
 
 */
 
@@ -417,7 +427,7 @@ https://companies-and-clients-australia.vercel.app/api/form/form-datesget
     sold: obj[3]?.sold || 0,  
     desc: obj[4]?.desc  || ""
   };
- axios.post('https://companies-and-clients-australia.vercel.app/api/form/form-post',payload).then(res => {
+ axios.post('https://backend-for-world-jobs.vercel.app/api/form/form-post',payload).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully!")
   setOpen(false)
@@ -435,13 +445,13 @@ https://companies-and-clients-australia.vercel.app/api/form/form-datesget
 
 
   
-axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get').then(res=> {
+axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
 
 
-    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-datesget')
+    axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -484,7 +494,7 @@ axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get'
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get')
+  const res = await axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-get')
   setdata(res.data)
 }
 
@@ -503,7 +513,7 @@ if(deleted === "1" ){
 
 
 useEffect(()=>{
-    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-datesget')
+    axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -539,7 +549,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-sevenget',{
+    axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -582,7 +592,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-date',{
+    axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -629,7 +639,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://companies-and-clients-australia.vercel.app/api/form/form-year",{
+      axios.get("https://backend-for-world-jobs.vercel.app/api/form/form-year",{
         params:{
           year:value
         }
@@ -668,7 +678,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://companies-and-clients-australia.vercel.app/api/form/form-month",{
+axios.get("https://backend-for-world-jobs.vercel.app/api/form/form-month",{
 
   params:{
     month:month,
@@ -712,8 +722,8 @@ else{  setdata({
   <div className="hero">
     <h1 className='font-bold'>
       <div className='flex items-center justify-center'>
-        <div><img width={50} src={img1}/></div>
-        <div>  Home Analytics</div>
+      
+        <div>Jobs Pakistan!</div>
       </div>
     </h1>
     <input type="text" className="search-bar"
@@ -726,7 +736,7 @@ else{  setdata({
      if(value ===""){
       localStorage.setItem("Search","")
 
-      axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-datesget')
+      axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -739,7 +749,7 @@ else{  setdata({
 
      }
 
-      axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-search',{
+      axios.get('https://backend-for-world-jobs.vercel.app/api/form/form-search',{
         params:{
           search:value
         }
@@ -786,20 +796,20 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >Total Items</h3>
+      <h3 >Total Jobs</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>Total Income</h3>
-      <p>${data.sold?.toLocaleString()}</p>
+      <h3>T Companies</h3>
+      <p>{data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Remanings</h3>
-      <p>${data.profit?.toLocaleString()}</p>
+      <h3>Total Cities</h3>
+      <p>{data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
-      <h3>Total Expense</h3>
-      <p>${data.price?.toLocaleString()}</p>
+      <h3>Total Links</h3>
+      <p>{data.price?.toLocaleString()}</p>
     </div>
   </div>
 
@@ -839,12 +849,12 @@ else{  setdata({
               margin="dense"
               id="product"
               name="product"
-              label="Product"
+              label="Job title"
               type="text"
               fullWidth
               variant="standard"
          onChange={OnChange}
-             value={obj[0]}
+          
             />
           </form>
                 <form  id="subscription-form">
@@ -855,12 +865,12 @@ else{  setdata({
               margin="dense"
               id="customer"
               name="customer"
-              label="Customer Name"
+              label="Company/Dept"
               type="text"
               fullWidth
               variant="standard"
                         onChange={OnChange2}
-                    value={obj[1]}
+                 
             />
           </form>
                      <form  id="subscription-form">
@@ -873,12 +883,12 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Price"
+              label="Job Type"
               type="text"
               fullWidth
               variant="standard"
                          onChange={OnChange3}
-            value={obj[2]}
+          
             />
           </form>
                      <form  id="subscription-form">
@@ -889,12 +899,12 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="Income"
+              label="City"
               type="text"
               fullWidth
               variant="standard"
                   onChange={OnChange4}
-                    value={obj[3]}
+                   
             />
           </form>
 
@@ -906,11 +916,11 @@ else{  setdata({
               margin="dense"
               id="desc"
               name="desc"
-              label="Description"
+              label="Job Link"
               type="text"
               fullWidth
               variant="standard"
-                    value={obj[4]}
+                
                     onChange={OnChange5}
             />
           </form>
@@ -1034,10 +1044,10 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Items</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Expense</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Income</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Remanings</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Jobs</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Companies</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Cities</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Links</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
