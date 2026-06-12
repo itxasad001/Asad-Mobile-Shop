@@ -211,7 +211,7 @@ useEffect(()=>{
 
                 console.log(elements._id)
 
-                axios.delete("https://home-analytics.vercel.app/api/form/form-subdelete",{
+                axios.delete("https://companies-and-clients-australia.vercel.app/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
@@ -263,7 +263,7 @@ const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
-    axios.get('https://home-analytics.vercel.app/api/form/form-get').then(res=> {
+    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -394,9 +394,9 @@ const [state, setstate] =useState()
   const variable = 1
 
   /*
-https://home-analytics.vercel.app
+https://companies-and-clients-australia.vercel.app
 
-https://home-analytics.vercel.app/api/form/form-datesget
+https://companies-and-clients-australia.vercel.app/api/form/form-datesget
 
 */
 
@@ -417,7 +417,7 @@ https://home-analytics.vercel.app/api/form/form-datesget
     sold: obj[3]?.sold || 0,  
     desc: obj[4]?.desc  || ""
   };
- axios.post('https://home-analytics.vercel.app/api/form/form-post',payload).then(res => {
+ axios.post('https://companies-and-clients-australia.vercel.app/api/form/form-post',payload).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully!")
   setOpen(false)
@@ -435,13 +435,13 @@ https://home-analytics.vercel.app/api/form/form-datesget
 
 
   
-axios.get('https://home-analytics.vercel.app/api/form/form-get').then(res=> {
+axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
 
 
-    axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
+    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -484,7 +484,7 @@ axios.get('https://home-analytics.vercel.app/api/form/form-get').then(res=> {
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://home-analytics.vercel.app/api/form/form-get')
+  const res = await axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get')
   setdata(res.data)
 }
 
@@ -503,7 +503,7 @@ if(deleted === "1" ){
 
 
 useEffect(()=>{
-    axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
+    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -539,7 +539,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://home-analytics.vercel.app/api/form/form-sevenget',{
+    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -582,7 +582,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://home-analytics.vercel.app/api/form/form-date',{
+    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -629,7 +629,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://home-analytics.vercel.app/api/form/form-year",{
+      axios.get("https://companies-and-clients-australia.vercel.app/api/form/form-year",{
         params:{
           year:value
         }
@@ -668,7 +668,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://home-analytics.vercel.app/api/form/form-month",{
+axios.get("https://companies-and-clients-australia.vercel.app/api/form/form-month",{
 
   params:{
     month:month,
@@ -726,7 +726,7 @@ else{  setdata({
      if(value ===""){
       localStorage.setItem("Search","")
 
-      axios.get('https://home-analytics.vercel.app/api/form/form-datesget')
+      axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -739,7 +739,7 @@ else{  setdata({
 
      }
 
-      axios.get('https://home-analytics.vercel.app/api/form/form-search',{
+      axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-search',{
         params:{
           search:value
         }
