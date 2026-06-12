@@ -796,15 +796,15 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >Total Jobs</h3>
+      <h3 >T Companies</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>T Companies</h3>
+      <h3>T Employees</h3>
       <p>{data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Total Cities</h3>
+      <h3>Pakistan Relevat</h3>
       <p>{data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
