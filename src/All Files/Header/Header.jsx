@@ -849,7 +849,7 @@ else{  setdata({
               margin="dense"
               id="product"
               name="product"
-              label="Job title"
+              label="Company"
               type="text"
               fullWidth
               variant="standard"
@@ -865,7 +865,7 @@ else{  setdata({
               margin="dense"
               id="customer"
               name="customer"
-              label="Company/Dept"
+              label="Employee Count"
               type="text"
               fullWidth
               variant="standard"
@@ -883,7 +883,7 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Job Type"
+              label="Location"
               type="text"
               fullWidth
               variant="standard"
@@ -899,7 +899,7 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="City"
+              label="Pakistan Relevant"
               type="text"
               fullWidth
               variant="standard"
