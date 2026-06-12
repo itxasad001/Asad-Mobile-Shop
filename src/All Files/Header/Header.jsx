@@ -155,10 +155,10 @@ useEffect(()=>{
       >
       
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sr</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Current Job </TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Company/Dept</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Job Type</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>City</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Company </TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Employee Count</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Location</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Pakistan Relevant</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Job Link</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
@@ -723,7 +723,7 @@ else{  setdata({
     <h1 className='font-bold'>
       <div className='flex items-center justify-center'>
       
-        <div>Jobs Pakistan!</div>
+        <div>Melbourne Companies</div>
       </div>
     </h1>
     <input type="text" className="search-bar"
@@ -1044,9 +1044,9 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Jobs</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Companies</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Cities</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Companies</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Employees</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Pakistan Relevant</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Links</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
