@@ -155,11 +155,11 @@ useEffect(()=>{
       >
       
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sr</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Company </TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Employee Count</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Location</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Pakistan Relevant</TableCell>
-           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Job Link</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Professor </TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>University</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Area</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Papers/Projects</TableCell>
+           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profile Link</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
 
@@ -221,7 +221,7 @@ useEffect(()=>{
 
                 console.log(elements._id)
 
-                axios.delete("https://companies-and-clients-australia.vercel.app/api/form/form-subdelete",{
+                axios.delete("https://universities-professors-backend.vercel.app/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
@@ -273,7 +273,7 @@ const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
-    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get').then(res=> {
+    axios.get('https://universities-professors-backend.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -404,9 +404,9 @@ const [state, setstate] =useState()
   const variable = 1
 
   /*
-https://companies-and-clients-australia.vercel.app
+https://universities-professors-backend.vercel.app
 
-https://companies-and-clients-australia.vercel.app/api/form/form-datesget
+https://universities-professors-backend.vercel.app/api/form/form-datesget
 
 */
 
@@ -427,7 +427,7 @@ https://companies-and-clients-australia.vercel.app/api/form/form-datesget
     sold: obj[3]?.sold || 0,  
     desc: obj[4]?.desc  || ""
   };
- axios.post('https://companies-and-clients-australia.vercel.app/api/form/form-post',payload).then(res => {
+ axios.post('https://universities-professors-backend.vercel.app/api/form/form-post',payload).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully!")
   setOpen(false)
@@ -445,13 +445,13 @@ https://companies-and-clients-australia.vercel.app/api/form/form-datesget
 
 
   
-axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get').then(res=> {
+axios.get('https://universities-professors-backend.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
 
 
-    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-datesget')
+    axios.get('https://universities-professors-backend.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -494,7 +494,7 @@ axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get'
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-get')
+  const res = await axios.get('https://universities-professors-backend.vercel.app/api/form/form-get')
   setdata(res.data)
 }
 
@@ -513,7 +513,7 @@ if(deleted === "1" ){
 
 
 useEffect(()=>{
-    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-datesget')
+    axios.get('https://universities-professors-backend.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -549,7 +549,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-sevenget',{
+    axios.get('https://universities-professors-backend.vercel.app/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -592,7 +592,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-date',{
+    axios.get('https://universities-professors-backend.vercel.app/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -639,7 +639,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://companies-and-clients-australia.vercel.app/api/form/form-year",{
+      axios.get("https://universities-professors-backend.vercel.app/api/form/form-year",{
         params:{
           year:value
         }
@@ -678,7 +678,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://companies-and-clients-australia.vercel.app/api/form/form-month",{
+axios.get("https://universities-professors-backend.vercel.app/api/form/form-month",{
 
   params:{
     month:month,
@@ -723,7 +723,7 @@ else{  setdata({
     <h1 className='font-bold'>
       <div className='flex items-center justify-center'>
       
-        <div>Melbourne Companies</div>
+        <div>Melbourne Supervisors</div>
       </div>
     </h1>
     <input type="text" className="search-bar"
@@ -736,7 +736,7 @@ else{  setdata({
      if(value ===""){
       localStorage.setItem("Search","")
 
-      axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-datesget')
+      axios.get('https://universities-professors-backend.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -749,7 +749,7 @@ else{  setdata({
 
      }
 
-      axios.get('https://companies-and-clients-australia.vercel.app/api/form/form-search',{
+      axios.get('https://universities-professors-backend.vercel.app/api/form/form-search',{
         params:{
           search:value
         }
@@ -796,15 +796,15 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >T Companies</h3>
+      <h3 >T Professors</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>T Employees</h3>
+      <h3>T Universities</h3>
       <p>{data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Pak Relevant</h3>
+      <h3>Total Projects</h3>
       <p>{data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
@@ -849,7 +849,7 @@ else{  setdata({
               margin="dense"
               id="product"
               name="product"
-              label="Company"
+              label="Professor"
               type="text"
               fullWidth
               variant="standard"
@@ -865,7 +865,7 @@ else{  setdata({
               margin="dense"
               id="customer"
               name="customer"
-              label="Employee Count"
+              label="University"
               type="text"
               fullWidth
               variant="standard"
@@ -883,7 +883,7 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Location"
+              label="Area/Field"
               type="text"
               fullWidth
               variant="standard"
@@ -899,7 +899,7 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="Pakistan Relevant"
+              label="Total Projects"
               type="text"
               fullWidth
               variant="standard"
@@ -1044,9 +1044,9 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Companies</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Employees</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Pakistan Relevant</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Professors</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Universities</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Projects</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Links</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
