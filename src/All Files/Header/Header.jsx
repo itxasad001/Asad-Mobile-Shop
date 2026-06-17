@@ -155,10 +155,10 @@ useEffect(()=>{
       >
       
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sr</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Professor </TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>University</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Area</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Papers/Projects</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Client</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Company Size</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Company</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>City</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profile Link</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
@@ -723,7 +723,7 @@ else{  setdata({
     <h1 className='font-bold'>
       <div className='flex items-center justify-center'>
       
-        <div>Melbourne</div>
+        <div>International Clients</div>
       </div>
     </h1>
     <input type="text" className="search-bar"
@@ -796,15 +796,15 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >T Professors</h3>
+      <h3 >T Clients</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>T Universities</h3>
+      <h3>Comp Size</h3>
       <p>{data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Total Projects</h3>
+      <h3>Companies</h3>
       <p>{data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
@@ -849,7 +849,7 @@ else{  setdata({
               margin="dense"
               id="product"
               name="product"
-              label="Professor"
+              label="Client"
               type="text"
               fullWidth
               variant="standard"
@@ -865,7 +865,7 @@ else{  setdata({
               margin="dense"
               id="customer"
               name="customer"
-              label="University"
+              label="Company Size"
               type="text"
               fullWidth
               variant="standard"
@@ -883,7 +883,7 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Area/Field"
+              label="Company"
               type="text"
               fullWidth
               variant="standard"
@@ -899,7 +899,7 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="Total Projects"
+              label="City"
               type="text"
               fullWidth
               variant="standard"
@@ -916,7 +916,7 @@ else{  setdata({
               margin="dense"
               id="desc"
               name="desc"
-              label="Job Link"
+              label="Profile Link"
               type="text"
               fullWidth
               variant="standard"
@@ -1044,9 +1044,9 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Professors</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Universities</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Projects</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Clients</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Company Sizes</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Companes</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Links</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
