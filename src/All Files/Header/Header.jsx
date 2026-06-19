@@ -155,11 +155,11 @@ useEffect(()=>{
       >
       
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sr</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Client</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Company Size</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Company</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Associated Individual</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Objective</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Australia Association</TableCell>
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>City</TableCell>
-           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profile Link</TableCell>
+           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Actual Dream</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
 
@@ -207,11 +207,8 @@ useEffect(()=>{
         <TableCell align='center' sx={{color:"green"}}>{elements.sold}</TableCell>
            <TableCell  align='center'>
 
-            <Link to={elements.desc} className='flex justify-center items-center w-full'>
-            {elements.desc?
-            <img className = "w-[20px] flex justify-center" src={nextcon}/>
-            :""}
-            </Link>
+           {elements.desc} 
+          
            
             
             
@@ -723,7 +720,7 @@ else{  setdata({
     <h1 className='font-bold'>
       <div className='flex items-center justify-center'>
       
-        <div>International Clients</div>
+        <div>Sipirit Guide</div>
       </div>
     </h1>
     <input type="text" className="search-bar"
@@ -796,19 +793,19 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >T Clients</h3>
+      <h3 >Individuals</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>Comp Size</h3>
+      <h3>Australia</h3>
       <p>{data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Companies</h3>
+      <h3>Objectives</h3>
       <p>{data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
-      <h3>Total Links</h3>
+      <h3>Cities</h3>
       <p>{data.price?.toLocaleString()}</p>
     </div>
   </div>
@@ -1044,10 +1041,10 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Clients</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Associations</TableCell>
             <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Company Sizes</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Companes</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Links</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Australia Associations</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Cities</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
