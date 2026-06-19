@@ -846,7 +846,7 @@ else{  setdata({
               margin="dense"
               id="product"
               name="product"
-              label="Client"
+              label="Associated Individual"
               type="text"
               fullWidth
               variant="standard"
@@ -862,7 +862,7 @@ else{  setdata({
               margin="dense"
               id="customer"
               name="customer"
-              label="Company Size"
+              label="Objective"
               type="text"
               fullWidth
               variant="standard"
@@ -880,7 +880,7 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Company"
+              label="Australia Association"
               type="text"
               fullWidth
               variant="standard"
@@ -913,7 +913,7 @@ else{  setdata({
               margin="dense"
               id="desc"
               name="desc"
-              label="Profile Link"
+              label="Description"
               type="text"
               fullWidth
               variant="standard"
@@ -1042,7 +1042,7 @@ apple === true ?
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
             <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Associations</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Company Sizes</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">All Objectives</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Australia Associations</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Cities</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
