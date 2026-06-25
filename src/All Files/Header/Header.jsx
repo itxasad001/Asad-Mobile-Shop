@@ -155,11 +155,11 @@ useEffect(()=>{
       >
       
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sr</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Current Job </TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Company/Dept</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Job Type</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>City</TableCell>
-           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Job Link</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Task</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Hour</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Hour Range</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Time Shift</TableCell>
+           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profile Link</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
 
@@ -221,7 +221,7 @@ useEffect(()=>{
 
                 console.log(elements._id)
 
-                axios.delete("https://applieded-jobs-backend.vercel.app/api/form/form-subdelete",{
+                axios.delete("https://international-job-individuals-backe.vercel.app/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
@@ -273,7 +273,7 @@ const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
-    axios.get('https://applieded-jobs-backend.vercel.app/api/form/form-get').then(res=> {
+    axios.get('https://international-job-individuals-backe.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -404,9 +404,9 @@ const [state, setstate] =useState()
   const variable = 1
 
   /*
-https://applieded-jobs-backend.vercel.app
+https://international-job-individuals-backe.vercel.app
 
-https://applieded-jobs-backend.vercel.app/api/form/form-datesget
+https://international-job-individuals-backe.vercel.app/api/form/form-datesget
 
 */
 
@@ -427,7 +427,7 @@ https://applieded-jobs-backend.vercel.app/api/form/form-datesget
     sold: obj[3]?.sold || 0,  
     desc: obj[4]?.desc  || ""
   };
- axios.post('https://applieded-jobs-backend.vercel.app/api/form/form-post',payload).then(res => {
+ axios.post('https://international-job-individuals-backe.vercel.app/api/form/form-post',payload).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully!")
   setOpen(false)
@@ -445,13 +445,13 @@ https://applieded-jobs-backend.vercel.app/api/form/form-datesget
 
 
   
-axios.get('https://applieded-jobs-backend.vercel.app/api/form/form-get').then(res=> {
+axios.get('https://international-job-individuals-backe.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
 
 
-    axios.get('https://applieded-jobs-backend.vercel.app/api/form/form-datesget')
+    axios.get('https://international-job-individuals-backe.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -494,7 +494,7 @@ axios.get('https://applieded-jobs-backend.vercel.app/api/form/form-get').then(re
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://applieded-jobs-backend.vercel.app/api/form/form-get')
+  const res = await axios.get('https://international-job-individuals-backe.vercel.app/api/form/form-get')
   setdata(res.data)
 }
 
@@ -513,7 +513,7 @@ if(deleted === "1" ){
 
 
 useEffect(()=>{
-    axios.get('https://applieded-jobs-backend.vercel.app/api/form/form-datesget')
+    axios.get('https://international-job-individuals-backe.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -549,7 +549,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://applieded-jobs-backend.vercel.app/api/form/form-sevenget',{
+    axios.get('https://international-job-individuals-backe.vercel.app/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -592,7 +592,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://applieded-jobs-backend.vercel.app/api/form/form-date',{
+    axios.get('https://international-job-individuals-backe.vercel.app/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -639,7 +639,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://applieded-jobs-backend.vercel.app/api/form/form-year",{
+      axios.get("https://international-job-individuals-backe.vercel.app/api/form/form-year",{
         params:{
           year:value
         }
@@ -678,7 +678,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://applieded-jobs-backend.vercel.app/api/form/form-month",{
+axios.get("https://international-job-individuals-backe.vercel.app/api/form/form-month",{
 
   params:{
     month:month,
@@ -723,7 +723,7 @@ else{  setdata({
     <h1 className='font-bold'>
       <div className='flex items-center justify-center'>
       
-        <div>Applieded Jobs!</div>
+        <div>Research/Jobs Skill Attendence</div>
       </div>
     </h1>
     <input type="text" className="search-bar"
@@ -736,7 +736,7 @@ else{  setdata({
      if(value ===""){
       localStorage.setItem("Search","")
 
-      axios.get('https://applieded-jobs-backend.vercel.app/api/form/form-datesget')
+      axios.get('https://international-job-individuals-backe.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -749,7 +749,7 @@ else{  setdata({
 
      }
 
-      axios.get('https://applieded-jobs-backend.vercel.app/api/form/form-search',{
+      axios.get('https://international-job-individuals-backend.vercel.app/api/form/form-search',{
         params:{
           search:value
         }
@@ -796,15 +796,15 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >Total Jobs</h3>
+      <h3 >T Tasks</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>T Companies</h3>
+      <h3>Total Hours</h3>
       <p>{data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Total Cities</h3>
+      <h3>Companies</h3>
       <p>{data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
@@ -849,7 +849,7 @@ else{  setdata({
               margin="dense"
               id="product"
               name="product"
-              label="Job title"
+              label="Task"
               type="text"
               fullWidth
               variant="standard"
@@ -865,7 +865,7 @@ else{  setdata({
               margin="dense"
               id="customer"
               name="customer"
-              label="Company/Dept"
+              label="Hour/Hours"
               type="text"
               fullWidth
               variant="standard"
@@ -883,7 +883,7 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Job Type"
+              label="Hour Range"
               type="text"
               fullWidth
               variant="standard"
@@ -899,7 +899,7 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="City"
+              label="Time Shift"
               type="text"
               fullWidth
               variant="standard"
@@ -916,7 +916,7 @@ else{  setdata({
               margin="dense"
               id="desc"
               name="desc"
-              label="Job Link"
+              label="Profile Link"
               type="text"
               fullWidth
               variant="standard"
@@ -1044,9 +1044,9 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Jobs</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Companies</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Cities</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Clients</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Company Sizes</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Companes</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Links</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
