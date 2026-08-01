@@ -723,7 +723,7 @@ else{  setdata({
     <h1 className='font-bold'>
       <div className='flex items-center justify-center'>
       
-        <div>Tech Clients World</div>
+        <div>World Tech Clients</div>
       </div>
     </h1>
     <input type="text" className="search-bar"
