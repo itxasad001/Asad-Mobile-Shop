@@ -849,7 +849,7 @@ else{  setdata({
               margin="dense"
               id="product"
               name="product"
-              label="Task"
+              label="Sent Count"
               type="text"
               fullWidth
               variant="standard"
@@ -865,7 +865,7 @@ else{  setdata({
               margin="dense"
               id="customer"
               name="customer"
-              label="Hour/Hours"
+              label="Replies"
               type="text"
               fullWidth
               variant="standard"
@@ -883,7 +883,7 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Hour Range"
+              label="Deals"
               type="text"
               fullWidth
               variant="standard"
@@ -899,7 +899,7 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="Time Shift"
+              label="Country"
               type="text"
               fullWidth
               variant="standard"
@@ -916,7 +916,7 @@ else{  setdata({
               margin="dense"
               id="desc"
               name="desc"
-              label="Profile Link"
+              label="Final Project Cost"
               type="text"
               fullWidth
               variant="standard"
