@@ -155,11 +155,11 @@ useEffect(()=>{
       >
       
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sr</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Task</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Hour</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Hour Range</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Time Shift</TableCell>
-           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profile Link</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Batch Sent Count</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Replies</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Deals</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Country</TableCell>
+           <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Final Project Cost</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
 
@@ -723,7 +723,7 @@ else{  setdata({
     <h1 className='font-bold'>
       <div className='flex items-center justify-center'>
       
-        <div>Research/Jobs Skill Attendence</div>
+        <div>Tech Clients World</div>
       </div>
     </h1>
     <input type="text" className="search-bar"
@@ -800,7 +800,7 @@ else{  setdata({
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>Total Hours</h3>
+      <h3>Total Sent</h3>
       <p>{data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
@@ -1044,10 +1044,10 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Clients</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Company Sizes</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Companes</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Links</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Sent</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Replies</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Deals</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Countries</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
