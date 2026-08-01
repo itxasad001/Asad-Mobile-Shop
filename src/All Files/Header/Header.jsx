@@ -155,7 +155,7 @@ useEffect(()=>{
       >
       
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sr</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Batch Sent Count</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Batch Sent Count</TableCell>
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Replies</TableCell>
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Deals</TableCell>
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Country</TableCell>
