@@ -687,6 +687,8 @@ if(result && result.length > 0){
   setdatafor(res.data.data);
 setdata(res.data.total);
 
+ setdatafor(res.data.data);
+setdata(res.data.total);
 
 }
 
