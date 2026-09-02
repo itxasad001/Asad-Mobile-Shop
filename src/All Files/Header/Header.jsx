@@ -792,7 +792,11 @@ else{  setdata({
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
       <h3 >Total Patients</h3>
-      <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
+      <p className='text-[10px]'>
+
+        {data.sales?.toLocaleString()} || 0
+        
+        </p>
     </div>
     <div className="card revenue w-[45%]">
       <h3>T Contacts</h3>
