@@ -134,9 +134,9 @@ useEffect(()=>{
  })}
         </TableCell>
         <TableCell align="center">{item.sales}</TableCell>
-        <TableCell align="center" >${item.price?.toLocaleString()}</TableCell>
-        <TableCell align="center">${item.sold?.toLocaleString()}</TableCell>
-        <TableCell align="center" sx={{color:"green"}}>${item.profit?.toLocaleString()}</TableCell>
+        <TableCell align="center" >{item.price?.toLocaleString()}</TableCell>
+        <TableCell align="center">{item.sold?.toLocaleString()}</TableCell>
+        <TableCell align="center" sx={{color:"green"}}>{item.profit?.toLocaleString()}</TableCell>
          <TableCell align="center" sx={{color:"green"}}>
             <IconButton  >
           <MdDelete className='text-[20px]' />
@@ -205,9 +205,9 @@ useEffect(()=>{
          
         </TableCell>
         <TableCell  align='center'>{elements.customer}</TableCell>
-        <TableCell  align='center'>${elements.price}</TableCell>
-        <TableCell  align='center'>${elements.sold}</TableCell>
-        <TableCell align='center' sx={{color:"green"}}>${elements.profit}</TableCell>
+        <TableCell  align='center'>{elements.price}</TableCell>
+        <TableCell  align='center'>{elements.sold}</TableCell>
+        <TableCell align='center' sx={{color:"green"}}>{elements.profit}</TableCell>
            <TableCell  align='center'>{elements.desc}</TableCell>
              <TableCell  align='center'>
               <Button onClick={()=>{
@@ -795,16 +795,19 @@ else{  setdata({
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>Contacts</h3>
-      <p>${data.sold?.toLocaleString()}</p>
+      <h3>T Contacts</h3>
+      {/* <p>${data.sold?.toLocaleString()}</p> */}
+      0
     </div>
     <div className="card profit w-[45%]">
-      <h3>Total Profit</h3>
-      <p>${data.profit?.toLocaleString()}</p>
+      <h3>T Ages</h3>
+      {/* <p>${data.profit?.toLocaleString()}</p> */}
+      0
     </div>
     <div className="card extra w-[45%]">
-      <h3>Total Cost</h3>
-      <p>${data.price?.toLocaleString()}</p>
+      <h3>P doctors </h3>
+      {/* <p>${data.price?.toLocaleString()}</p> */}
+      0
     </div>
   </div>
 
