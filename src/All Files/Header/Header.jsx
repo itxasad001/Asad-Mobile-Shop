@@ -797,17 +797,18 @@ else{  setdata({
     <div className="card revenue w-[45%]">
       <h3>T Contacts</h3>
       {/* <p>${data.sold?.toLocaleString()}</p> */}
-      0
+      <p>0</p>
+      
     </div>
     <div className="card profit w-[45%]">
       <h3>T Ages</h3>
       {/* <p>${data.profit?.toLocaleString()}</p> */}
-      0
+      <p>0</p>
     </div>
     <div className="card extra w-[45%]">
       <h3>P doctors </h3>
       {/* <p>${data.price?.toLocaleString()}</p> */}
-      0
+      <p>0</p>
     </div>
   </div>
 
