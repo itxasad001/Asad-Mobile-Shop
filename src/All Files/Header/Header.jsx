@@ -794,9 +794,16 @@ else{  setdata({
       <h3 >Total Patients</h3>
       <p className='text-[10px]'>
 
-        {data.sales?.toLocaleString()} || 0
+        {data.sales?.toLocaleString()} 
         
         </p>
+        <p className='text-[10px]'>
+
+        
+        
+        </p>
+
+
     </div>
     <div className="card revenue w-[45%]">
       <h3>T Contacts</h3>
