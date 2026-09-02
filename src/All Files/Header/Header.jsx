@@ -157,11 +157,11 @@ useEffect(()=>{
         }}
       >
       
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Product Name</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Customer</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Actual Price</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sold Price</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profit</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Patient Name</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Curing</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Age</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Contatct</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Prefered Doctor</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Description</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
@@ -214,7 +214,7 @@ useEffect(()=>{
 
                 console.log(elements._id)
 
-                axios.delete("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-subdelete",{
+                axios.delete("https://dentist-web-agent-dashboard.vercel.app/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
@@ -266,7 +266,7 @@ const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
-    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get').then(res=> {
+    axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -399,7 +399,7 @@ const [state, setstate] =useState()
   /*
 http://localhost:8000
 
-https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget
+https://dentist-web-agent-dashboard.vercel.app/api/form/form-datesget
 
 */
 
@@ -420,7 +420,7 @@ https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget
   };
     
 
- axios.post('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-post',payload).then(res => {
+ axios.post('https://dentist-web-agent-dashboard.vercel.app/api/form/form-post',payload).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully!")
   setOpen(false)
@@ -435,14 +435,14 @@ https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget
 
 
   
-axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get').then(res=> {
+axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
       setOpen(false);
 
     }).catch(err => err)
 
   
-    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
+    axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -487,7 +487,7 @@ axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get')
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get')
+  const res = await axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-get')
   setdata(res.data)
 }
 
@@ -506,7 +506,7 @@ if(deleted === "1" ){
 
 
 useEffect(()=>{
-    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
+    axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -542,7 +542,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-sevenget',{
+    axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -585,7 +585,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-date',{
+    axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -632,7 +632,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-year",{
+      axios.get("https://dentist-web-agent-dashboard.vercel.app/api/form/form-year",{
         params:{
           year:value
         }
@@ -671,7 +671,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-month",{
+axios.get("https://dentist-web-agent-dashboard.vercel.app/api/form/form-month",{
 
   params:{
     month:month,
@@ -719,7 +719,7 @@ else{  setdata({
 
   <div className="hero">
     <h1 className='font-bold'>
-      <img src={logo}/>
+     <div>Dental Dashboard</div>
   </h1>
     <input type="text" className="search-bar"
      placeholder="Search product, name, sales..."
@@ -731,7 +731,7 @@ else{  setdata({
      if(value ===""){
       localStorage.setItem("Search","")
 
-      axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
+      axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -744,7 +744,7 @@ else{  setdata({
 
      }
 
-      axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-search',{
+      axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-search',{
         params:{
           search:value
         }
@@ -791,11 +791,11 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >Total Sales</h3>
+      <h3 >Total Patients</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>Revenue</h3>
+      <h3></h3>
       <p>${data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
@@ -835,7 +835,7 @@ else{  setdata({
               margin="dense"
               id="product"
               name="product"
-              label="Product"
+              label="Patient Name"
               type="text"
               fullWidth
               variant="standard"
@@ -851,7 +851,7 @@ else{  setdata({
               margin="dense"
               id="customer"
               name="customer"
-              label="Customer Name"
+              label="Curing"
               type="text"
               fullWidth
               variant="standard"
@@ -869,7 +869,7 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Actual Price"
+              label="Age"
               type="text"
               fullWidth
               variant="standard"
@@ -885,7 +885,7 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="Sold Price"
+              label="Contact"
               type="text"
               fullWidth
               variant="standard"
@@ -1034,10 +1034,10 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Sales</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">T.Actual Cost</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Sale</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Profit</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Patients</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">T.P Doctors</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Contacts</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Description</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
