@@ -5,6 +5,9 @@ import { FaAngleDown } from "react-icons/fa";
 
 import instagram from './Image/instagram-logo_1080029-106-removebg-preview.png'
 import Snapchat from './Image/sdjsakdaaskda-removebg-preview.png'
+import { LuFilter } from "react-icons/lu";
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import SpeedDial from '@mui/material/SpeedDial';
 
 
 import CloseIcon from '@mui/icons-material/Close';
@@ -930,20 +933,60 @@ else{  setdata({
       </Dialog>
     </React.Fragment>
   </div>
-
-  <div className='flex justify-end pl-8 LEft-sideApplyfilter'>
-    
-    
+   <div className="flex justify-end items-center gap-2 pl-8 LEft-sideApplyfilter">
+  
+    {/* AI */}
+      <Box sx={{ width: 45 }}>
+        <button>
+           <a
+      href=""
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+    <SpeedDial
+      ariaLabel="AI Agent"
+      sx={{
+        transform: 'scale(0.7)',
+        '& .MuiFab-root': {
+          backgroundColor: '#FF7A00',
+          color: '#fff',
+          '&:hover': {
+            backgroundColor: '#E66A00',
+          },
+        },
+      }}
+      icon={<SpeedDialIcon />}
+    />
+  </a>
+    </button>
+  </Box>
+    {/* Filter */}
     <button
+      onClick={() => setapple(apple === true ? false : true)}
+      className="cursor-pointer"
+    >
+       <Box sx={{ width: 40}}>
+      <SpeedDial
+        ariaLabel="Filter"
+        sx={{
+          transform: 'scale(0.7)',
+          '& .MuiFab-root': {
+            backgroundColor: '#1976D2',
+            color: '#fff',
+            '&:hover': {
+              backgroundColor: '#1565C0',
+            },
+          },
+        }}
+        icon={<LuFilter className="text-[20px]" />}
+      />
+      </Box>
+    </button>
+  
+  </div>
 
-    onClick={()=>{setapple(apple===true?false:true),
-      setfilter(filter==="Apply Filter"?"Hide Filter":"Apply Filter")
-
-
-    }}
-    
-    className='text-blue-400 cursor-pointer underline font-bold text-[15px] MArgin-Filter '>{filter}</button></div>
-
+ 
+  
 </div>
 
 {
