@@ -939,7 +939,7 @@ else{  setdata({
       <Box sx={{ width: 45 }}>
         <button>
            <a
-      href="https://home-analytics-agent.vercel.app/"
+      href="https://home-analytics-agent-front.vercel.app/"
       target="_blank"
       rel="noopener noreferrer"
     >
