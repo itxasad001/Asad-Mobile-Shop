@@ -2,14 +2,18 @@ import React, { useContext, useState } from 'react'
 import './Header.css'
 import PropTypes from 'prop-types';
 import { FaAngleDown } from "react-icons/fa";
-
+import FilterListIcon from '@mui/icons-material/FilterList';
+import { LuFilter } from "react-icons/lu";
 import instagram from './Image/instagram-logo_1080029-106-removebg-preview.png'
 import Snapchat from './Image/sdjsakdaaskda-removebg-preview.png'
-
-
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import SpeedDial from '@mui/material/SpeedDial';
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 
+import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
+import SaveIcon from '@mui/icons-material/Save';
+import PrintIcon from '@mui/icons-material/Print';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -134,9 +138,9 @@ useEffect(()=>{
  })}
         </TableCell>
         <TableCell align="center">{item.sales}</TableCell>
-        <TableCell align="center" >{item.price?.toLocaleString()}</TableCell>
-        <TableCell align="center">{item.sold?.toLocaleString()}</TableCell>
-        <TableCell align="center" sx={{color:"green"}}>{item.profit?.toLocaleString()}</TableCell>
+        <TableCell align="center" >${item.price?.toLocaleString()}</TableCell>
+        <TableCell align="center">${item.sold?.toLocaleString()}</TableCell>
+        <TableCell align="center" sx={{color:"green"}}>${item.profit?.toLocaleString()}</TableCell>
          <TableCell align="center" sx={{color:"green"}}>
             <IconButton  >
           <MdDelete className='text-[20px]' />
@@ -157,11 +161,11 @@ useEffect(()=>{
         }}
       >
       
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Patient Name</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Curing</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Age</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Contatct</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Prefered Doctor</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Product Name</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Customer</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Actual Price</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sold Price</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profit</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Description</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
@@ -205,16 +209,16 @@ useEffect(()=>{
          
         </TableCell>
         <TableCell  align='center'>{elements.customer}</TableCell>
-        <TableCell  align='center'>{elements.price}</TableCell>
-        <TableCell  align='center'>{elements.sold}</TableCell>
-        <TableCell align='center' sx={{color:"green"}}>{elements.profit}</TableCell>
+        <TableCell  align='center'>${elements.price}</TableCell>
+        <TableCell  align='center'>${elements.sold}</TableCell>
+        <TableCell align='center' sx={{color:"green"}}>${elements.profit}</TableCell>
            <TableCell  align='center'>{elements.desc}</TableCell>
              <TableCell  align='center'>
               <Button onClick={()=>{
 
                 console.log(elements._id)
 
-                axios.delete("https://dentist-web-agent-dashboard.vercel.app/api/form/form-subdelete",{
+                axios.delete("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
@@ -266,7 +270,7 @@ const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
-    axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-get').then(res=> {
+    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -399,7 +403,7 @@ const [state, setstate] =useState()
   /*
 http://localhost:8000
 
-https://dentist-web-agent-dashboard.vercel.app/api/form/form-datesget
+https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget
 
 */
 
@@ -420,7 +424,7 @@ https://dentist-web-agent-dashboard.vercel.app/api/form/form-datesget
   };
     
 
- axios.post('https://dentist-web-agent-dashboard.vercel.app/api/form/form-post',payload).then(res => {
+ axios.post('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-post',payload).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully!")
   setOpen(false)
@@ -435,14 +439,14 @@ https://dentist-web-agent-dashboard.vercel.app/api/form/form-datesget
 
 
   
-axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-get').then(res=> {
+axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
       setOpen(false);
 
     }).catch(err => err)
 
   
-    axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-datesget')
+    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -487,7 +491,7 @@ axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-get').th
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-get')
+  const res = await axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get')
   setdata(res.data)
 }
 
@@ -506,7 +510,7 @@ if(deleted === "1" ){
 
 
 useEffect(()=>{
-    axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-datesget')
+    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -542,7 +546,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-sevenget',{
+    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -585,7 +589,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-date',{
+    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -632,7 +636,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://dentist-web-agent-dashboard.vercel.app/api/form/form-year",{
+      axios.get("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-year",{
         params:{
           year:value
         }
@@ -662,7 +666,6 @@ useEffect(()=>{
     }
 
   const [apple , setapple]=useState(false)
-  const [filter, setfilter]=useState("Apply Filter")
 
 
   const [open, setOpen] = React.useState(false);
@@ -671,7 +674,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://dentist-web-agent-dashboard.vercel.app/api/form/form-month",{
+axios.get("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-month",{
 
   params:{
     month:month,
@@ -719,7 +722,7 @@ else{  setdata({
 
   <div className="hero">
     <h1 className='font-bold'>
-     <div>Dental Dashboard</div>
+      <img src={logo}/>
   </h1>
     <input type="text" className="search-bar"
      placeholder="Search product, name, sales..."
@@ -731,7 +734,7 @@ else{  setdata({
      if(value ===""){
       localStorage.setItem("Search","")
 
-      axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-datesget')
+      axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -744,7 +747,7 @@ else{  setdata({
 
      }
 
-      axios.get('https://dentist-web-agent-dashboard.vercel.app/api/form/form-search',{
+      axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-search',{
         params:{
           search:value
         }
@@ -791,35 +794,20 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >Total Patients</h3>
-      <p className='text-[10px]'>
-
-        {data.sales?.toLocaleString()} 
-        
-        </p>
-        <p className='text-[10px]'>
-
-        
-        
-        </p>
-
-
+      <h3 >Total Sales</h3>
+      <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>T Contacts</h3>
-      {/* <p>${data.sold?.toLocaleString()}</p> */}
-      <p>0</p>
-      
+      <h3>Revenue</h3>
+      <p>${data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>T Ages</h3>
-      {/* <p>${data.profit?.toLocaleString()}</p> */}
-      <p>0</p>
+      <h3>Total Profit</h3>
+      <p>${data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
-      <h3>P doctors </h3>
-      {/* <p>${data.price?.toLocaleString()}</p> */}
-      <p>0</p>
+      <h3>Total Cost</h3>
+      <p>${data.price?.toLocaleString()}</p>
     </div>
   </div>
 
@@ -850,7 +838,7 @@ else{  setdata({
               margin="dense"
               id="product"
               name="product"
-              label="Patient Name"
+              label="Product"
               type="text"
               fullWidth
               variant="standard"
@@ -866,7 +854,7 @@ else{  setdata({
               margin="dense"
               id="customer"
               name="customer"
-              label="Curing"
+              label="Customer Name"
               type="text"
               fullWidth
               variant="standard"
@@ -884,7 +872,7 @@ else{  setdata({
               margin="dense"
               id="price"
               name="price"
-              label="Age"
+              label="Actual Price"
               type="text"
               fullWidth
               variant="standard"
@@ -900,7 +888,7 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="Contact"
+              label="Sold Price"
               type="text"
               fullWidth
               variant="standard"
@@ -938,20 +926,64 @@ else{  setdata({
         </DialogActions>
       </Dialog>
     </React.Fragment>
+
+    
   </div>
 
-  <div className='flex justify-end pl-8 LEft-sideApplyfilter'>
     
-    
-    <button
 
-    onClick={()=>{setapple(apple===true?false:true),
-      setfilter(filter==="Apply Filter"?"Hide Filter":"Apply Filter")
+  <div className="flex justify-end items-center gap-2 pl-8 LEft-sideApplyfilter">
 
-
+  {/* AI */}
+    <Box sx={{ width: 45 }}>
+      <button>
+         <a
+    href="https://mobile-chat-agent-three.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+  <SpeedDial
+    ariaLabel="AI Agent"
+    sx={{
+      transform: 'scale(0.7)',
+      '& .MuiFab-root': {
+        backgroundColor: '#FF7A00',
+        color: '#fff',
+        '&:hover': {
+          backgroundColor: '#E66A00',
+        },
+      },
     }}
-    
-    className='text-blue-400 cursor-pointer underline font-bold text-[15px] MArgin-Filter '>{filter}</button></div>
+    icon={<SpeedDialIcon />}
+  />
+</a>
+  </button>
+</Box>
+  {/* Filter */}
+  <button
+    onClick={() => setapple(apple === true ? false : true)}
+    className="cursor-pointer"
+  >
+     <Box sx={{ width: 40}}>
+    <SpeedDial
+      ariaLabel="Filter"
+      sx={{
+        transform: 'scale(0.7)',
+        '& .MuiFab-root': {
+          backgroundColor: '#1976D2',
+          color: '#fff',
+          '&:hover': {
+            backgroundColor: '#1565C0',
+          },
+        },
+      }}
+      icon={<LuFilter className="text-[20px]" />}
+    />
+    </Box>
+  </button>
+
+</div>
+
 
 </div>
 
@@ -1001,7 +1033,7 @@ apple === true ?
       <option value={30} >Last 30 Days</option>
     </select>
 
-    <button>Apply Filters</button>
+   
   </div>
 :""
 }
@@ -1049,10 +1081,10 @@ apple === true ?
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Patients</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">T.P Doctors</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Contacts</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Description</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Sales</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">T.Actual Cost</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Sale</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Profit</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
