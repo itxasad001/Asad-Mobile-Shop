@@ -257,6 +257,8 @@
     .LEft-sideApplyfilter{
         width: 50%;
       justify-content: end;
+      align-items: center;
+     
     }
     .Mobile-Width1{
         font-size: 15px;

@@ -2,17 +2,19 @@ import React, { useContext, useState } from 'react'
 import './Header.css'
 import PropTypes from 'prop-types';
 import { FaAngleDown } from "react-icons/fa";
-
+import FilterListIcon from '@mui/icons-material/FilterList';
+import { LuFilter } from "react-icons/lu";
 import instagram from './Image/instagram-logo_1080029-106-removebg-preview.png'
 import Snapchat from './Image/sdjsakdaaskda-removebg-preview.png'
-import { LuFilter } from "react-icons/lu";
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDial from '@mui/material/SpeedDial';
-
-
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
-import img1 from './Image/logo-home-png-7425.png'
+import { LuSparkles } from "react-icons/lu";
+
+import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
+import SaveIcon from '@mui/icons-material/Save';
+import PrintIcon from '@mui/icons-material/Print';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -47,9 +49,7 @@ import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect } from 'react';
-
-
-
+import logo from './Image/Design-Studio-2026-06-08 (1).png'
 
 
 
@@ -121,18 +121,23 @@ useEffect(()=>{
     <>
     <Toaster  style={{ borderRadius: "20px" }}/>
       <TableRow>
-        <TableCell align='center'>
+        <TableCell align='center' width={20
+        }   sx={{
+    width: 180,
+    wordBreak: "break-word",
+  }}>
           <IconButton size="small" onClick={() => setOpen(!open)}>
             {open ? <FaAngleUp /> : <FaAngleDown className='text-[18px]' />}
           </IconButton>
         </TableCell>
         <TableCell align="center">
-   { new Date(item._id).toLocaleString("en-US",{
+          { new Date(item._id).toLocaleString("en-US",{
   day:"2-digit",
   month:"short",
   year:"numeric",
 
- })}</TableCell>
+ })}
+        </TableCell>
         <TableCell align="center">{item.sales}</TableCell>
         <TableCell align="center" >${item.price?.toLocaleString()}</TableCell>
         <TableCell align="center">${item.sold?.toLocaleString()}</TableCell>
@@ -158,10 +163,10 @@ useEffect(()=>{
       >
       
         <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Product Name</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Individual Buyer</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Item Price</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Income</TableCell>
-        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Remanings</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Customer</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Actual Price</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Sold Price</TableCell>
+        <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Profit</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Description</TableCell>
            <TableCell sx={{fontWeight:"bold", color:"gray"}} align='center'>Delete</TableCell>
 
@@ -214,7 +219,7 @@ useEffect(()=>{
 
                 console.log(elements._id)
 
-                axios.delete("https://home-analysis-rosy.vercel.app/api/form/form-subdelete",{
+                axios.delete("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-subdelete",{
                   params:{
                     _id:elements._id
                   }
@@ -254,7 +259,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
- let obj = []
+ 
 function Header() {
 
 
@@ -266,7 +271,7 @@ const [datafor, setdatafor]=useState([])
 
       useEffect(()=>{
 
-    axios.get('https://home-analysis-rosy.vercel.app/api/form/form-get').then(res=> {
+    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
 
     }).catch(err => err)
@@ -284,11 +289,11 @@ const [datafor, setdatafor]=useState([])
     desc:""
   })
 
+  
 
- 
 
-    
-
+  
+let obj = []
 const [state, setstate] =useState()
   const OnChange = (e)=>{
 
@@ -397,9 +402,9 @@ const [state, setstate] =useState()
   const variable = 1
 
   /*
-https://home-analytics-pg5iyoo0c-zeeshan3106s-projects.vercel.app/
+http://localhost:8000
 
-https://home-analysis-rosy.vercel.app/api/form/form-datesget
+https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget
 
 */
 
@@ -411,22 +416,19 @@ https://home-analysis-rosy.vercel.app/api/form/form-datesget
 
 
   const onSubmit = async()=>{
-
-
-     const payload = {
-    product: obj[0]?.product,
-    customer:obj[1]?.customer,
+ const payload = {
+    product: obj[0]?.product || "",
+    customer:obj[1]?.customer || "",
     price:obj[2]?.price || 0, 
     sold: obj[3]?.sold || 0,  
-    desc: obj[4]?.desc  || ""
+    desc: obj[4]?.desc || ""
   };
- axios.post('https://home-analysis-rosy.vercel.app/api/form/form-post',payload).then(res => {
+    
+
+ axios.post('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-post',payload).then(res => {
   console.log(res.data)
   toast.success("Data Added Successfully!")
   setOpen(false)
-     
-
-
 
 
      
@@ -438,17 +440,20 @@ https://home-analysis-rosy.vercel.app/api/form/form-datesget
 
 
   
-axios.get('https://home-analysis-rosy.vercel.app/api/form/form-get').then(res=> {
+axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get').then(res=> {
       setdata(res.data)
+      setOpen(false);
 
     }).catch(err => err)
 
-
-    axios.get('https://home-analysis-rosy.vercel.app/api/form/form-datesget')
+  
+    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
         setdatafor(res.data.data)
+
+         setOpen(false);
 
 
       }).catch(err => err)
@@ -487,7 +492,7 @@ axios.get('https://home-analysis-rosy.vercel.app/api/form/form-get').then(res=> 
 
 
     const fetchData = async () => {
-  const res = await axios.get('https://home-analysis-rosy.vercel.app/api/form/form-get')
+  const res = await axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-get')
   setdata(res.data)
 }
 
@@ -506,7 +511,7 @@ if(deleted === "1" ){
 
 
 useEffect(()=>{
-    axios.get('https://home-analysis-rosy.vercel.app/api/form/form-datesget')
+    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -542,7 +547,7 @@ useEffect(()=>{
     const selectValue = e.target.value
     localStorage.setItem("days",selectValue)
 
-    axios.get('https://home-analysis-rosy.vercel.app/api/form/form-sevenget',{
+    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-sevenget',{
       params:{
         days:selectValue
       }
@@ -585,7 +590,7 @@ useEffect(()=>{
     localStorage.setItem("date",datevalue)
 
 
-    axios.get('https://home-analysis-rosy.vercel.app/api/form/form-date',{
+    axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-date',{
 
       params:{
         date:datevalue
@@ -632,7 +637,7 @@ useEffect(()=>{
       localStorage.setItem("Year",value)
    
 
-      axios.get("https://home-analysis-rosy.vercel.app/api/form/form-year",{
+      axios.get("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-year",{
         params:{
           year:value
         }
@@ -662,7 +667,6 @@ useEffect(()=>{
     }
 
   const [apple , setapple]=useState(false)
-  const [filter, setfilter]=useState("Apply Filter")
 
 
   const [open, setOpen] = React.useState(false);
@@ -671,7 +675,7 @@ useEffect(()=>{
 const month = e.target.value
 console.log(month)
 const year = localStorage.getItem("Year")
-axios.get("https://home-analysis-rosy.vercel.app/api/form/form-month",{
+axios.get("https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-month",{
 
   params:{
     month:month,
@@ -679,6 +683,7 @@ axios.get("https://home-analysis-rosy.vercel.app/api/form/form-month",{
   }
 
 }).then(res => {console.log(res)
+  console.log(month)
 
 
 const result = res.data.data
@@ -691,6 +696,7 @@ setdata(res.data.total);
 setdata(res.data.total);
 
 }
+
 else{  setdata({
       price:"0",
       sold:"0",
@@ -717,11 +723,8 @@ else{  setdata({
 
   <div className="hero">
     <h1 className='font-bold'>
-      <div className='flex items-center justify-center'>
-        <div><img width={50} src={img1}/></div>
-        <div>  Home Analytics</div>
-      </div>
-    </h1>
+      <img src={logo}/>
+  </h1>
     <input type="text" className="search-bar"
      placeholder="Search product, name, sales..."
 
@@ -732,7 +735,7 @@ else{  setdata({
      if(value ===""){
       localStorage.setItem("Search","")
 
-      axios.get('https://home-analysis-rosy.vercel.app/api/form/form-datesget')
+      axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-datesget')
       .then(res=> {
 
 
@@ -745,7 +748,7 @@ else{  setdata({
 
      }
 
-      axios.get('https://home-analysis-rosy.vercel.app/api/form/form-search',{
+      axios.get('https://asad-mobile-shop-backend-delta.vercel.app/api/form/form-search',{
         params:{
           search:value
         }
@@ -792,19 +795,19 @@ else{  setdata({
  
   <div className="stats-grid  ">
     <div className="card sales w-[45%]">
-      <h3 >Total Items</h3>
+      <h3 >Total Sales</h3>
       <p className='text-[10px]'>{data.sales?.toLocaleString()}</p>
     </div>
     <div className="card revenue w-[45%]">
-      <h3>Total Income</h3>
+      <h3>Revenue</h3>
       <p>${data.sold?.toLocaleString()}</p>
     </div>
     <div className="card profit w-[45%]">
-      <h3>Remanings</h3>
+      <h3>Total Profit</h3>
       <p>${data.profit?.toLocaleString()}</p>
     </div>
     <div className="card extra w-[45%]">
-      <h3>Total Expense</h3>
+      <h3>Total Cost</h3>
       <p>${data.price?.toLocaleString()}</p>
     </div>
   </div>
@@ -813,16 +816,7 @@ else{  setdata({
 <div className='flex items-center justify-center gap-4 '>
 
   <div>
-<Button onClick={()=>{
-  setOpen(true)
-
- const payload = {
-      product: obj[0]?.product || "",
-      customer: obj[1]?.customer || "",
-      price: Number(obj[2]?.price) || 0, 
-      sold: Number(obj[3]?.sold) || 0,  
-      desc: obj[4]?.desc || ""
-    };
+<Button onClick={()=>{setOpen(true)
 
 
 
@@ -849,8 +843,8 @@ else{  setdata({
               type="text"
               fullWidth
               variant="standard"
-         onChange={OnChange}
-         
+            onChange={OnChange}
+             value={obj[0]}
             />
           </form>
                 <form  id="subscription-form">
@@ -865,26 +859,26 @@ else{  setdata({
               type="text"
               fullWidth
               variant="standard"
-                        onChange={OnChange2}
-                 
+                     onChange={OnChange2}
+                    value={obj[1]}
             />
           </form>
                      <form  id="subscription-form">
      
             <TextField
 
-           
+    
            
               required
               margin="dense"
               id="price"
               name="price"
-              label="Price"
+              label="Actual Price"
               type="text"
               fullWidth
               variant="standard"
-                         onChange={OnChange3}
-            
+                          onChange={OnChange3}
+            value={obj[2]}
             />
           </form>
                      <form  id="subscription-form">
@@ -895,12 +889,12 @@ else{  setdata({
               margin="dense"
               id="sold"
               name="sold"
-              label="Income"
+              label="Sold Price"
               type="text"
               fullWidth
               variant="standard"
-                  onChange={OnChange4}
-                 
+                      onChange={OnChange4}
+                    value={obj[3]}
             />
           </form>
 
@@ -916,8 +910,9 @@ else{  setdata({
               type="text"
               fullWidth
               variant="standard"
-          
-                    onChange={OnChange5}
+               onChange={OnChange5}
+                   value={obj[4]}
+                   
             />
           </form>
 
@@ -932,61 +927,89 @@ else{  setdata({
         </DialogActions>
       </Dialog>
     </React.Fragment>
+
+    
   </div>
-   <div className="flex justify-end items-center gap-2 pl-8 LEft-sideApplyfilter">
-  
-    {/* AI */}
-      <Box sx={{ width: 45 }}>
-        <button>
-           <a
-      href="https://home-analytics-agent-front.vercel.app/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-    <SpeedDial
-      ariaLabel="AI Agent"
-      sx={{
+
+    
+
+  <div className="flex justify-center  items-center gap-2 pl-8 LEft-sideApplyfilter">
+{/* AI */}
+    <Box sx={{ width: 36 }}>
+      <button>
+         <a
+    href="https://mobiles-ai-chatmodel-front.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+  <SpeedDial
+    ariaLabel="AI Agent"
+       sx={{
         transform: 'scale(0.7)',
         '& .MuiFab-root': {
-          backgroundColor: '#FF7A00',
-          color: '#fff',
+          backgroundColor: '#fff',
+          color: '#000',
           '&:hover': {
-            backgroundColor: '#E66A00',
+            backgroundColor: '#f5f5f5',
           },
         },
       }}
-      icon={<SpeedDialIcon />}
-    />
-  </a>
-    </button>
-  </Box>
-    {/* Filter */}
-    <button
-      onClick={() => setapple(apple === true ? false : true)}
-      className="cursor-pointer"
-    >
-       <Box sx={{ width: 40}}>
-      <SpeedDial
-        ariaLabel="Filter"
-        sx={{
-          transform: 'scale(0.7)',
-          '& .MuiFab-root': {
-            backgroundColor: '#1976D2',
-            color: '#fff',
-            '&:hover': {
-              backgroundColor: '#1565C0',
-            },
+    icon={<LuSparkles  className='text-[20px]' />}
+  />
+</a>
+  </button>
+</Box>
+  {/* Agent */}
+    <Box sx={{ width: 45 }}>
+      <button>
+         <a
+    href="https://mobile-chat-agent-three.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+  <SpeedDial
+    ariaLabel="AI Agent"
+    sx={{
+      transform: 'scale(0.7)',
+      '& .MuiFab-root': {
+        backgroundColor: '#FF7A00',
+        color: '#fff',
+        '&:hover': {
+          backgroundColor: '#E66A00',
+        },
+      },
+    }}
+    icon={<SpeedDialIcon />}
+  />
+</a>
+  </button>
+</Box>
+  {/* Filter */}
+  <button
+    onClick={() => setapple(apple === true ? false : true)}
+    className="cursor-pointer"
+  >
+     <Box sx={{ width: 40}}>
+    <SpeedDial
+      ariaLabel="Filter"
+      sx={{
+        transform: 'scale(0.7)',
+        '& .MuiFab-root': {
+          backgroundColor: '#1976D2',
+          color: '#fff',
+          '&:hover': {
+            backgroundColor: '#1565C0',
           },
-        }}
-        icon={<LuFilter className="text-[20px]" />}
-      />
-      </Box>
-    </button>
-  
-  </div>
+        },
+      }}
+      icon={<LuFilter className="text-[20px]" />}
+    />
+    </Box>
+  </button>
 
- 
-  
+</div>
+
+
 </div>
 
 {
@@ -1009,7 +1032,6 @@ apple === true ?
 <option value="10">November</option>
 <option value="11">December</option>
 <option value="13">All</option>
-
 
     </select>
 
@@ -1036,7 +1058,7 @@ apple === true ?
       <option value={30} >Last 30 Days</option>
     </select>
 
-    <button>Apply Filters</button>
+   
   </div>
 :""
 }
@@ -1077,15 +1099,17 @@ apple === true ?
 
 
     <TableContainer component={Paper} sx={{ maxHeight: 440 }} >
-      <Table sx={{ minWidth: 650 , fontWeight: "bold"}} aria-label="simple table" stickyHeader>
+      <Table sx={{ minWidth: 650 , fontWeight: "bold"}} aria-label="simple table"  stickyHeader 
+      
+     >
         <TableHead>
           <TableRow className='font-bold'>
                <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Detail</TableCell>
             <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align='center'>Date</TableCell>
-            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Items</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">Total Expense</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Income</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Remanings</TableCell>
+            <TableCell  sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Total Sales</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' , fontSize:"16px"}} align="center">T.Actual Cost</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Sale</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">T.Profit</TableCell>
                   <TableCell sx={{ fontWeight: 'bold', fontSize:"16px" }} align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
@@ -1117,16 +1141,14 @@ apple === true ?
 
 <div className='Footer-Margin gap-1 jusce'>
   <div className='flex items-center justify-center '>
-     <div> <Link to="https://www.facebook.com/profile.php?id=100015850997278"> <img className='w-[23px] h-[23px] ' src='https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original' />
+     <div> <Link to="https://www.facebook.com/itx.asad.khan.lodhi"> <img className='w-[23px] h-[23px] ' src='https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original' />
  </Link>  
  
  </div> 
- <Link to="https://www.instagram.com/zeeshan.ali.zafar">
- <img className='w-[23px] h-[23px]  ml-2 MArgin-left-insta' src={instagram} />
+ <Link to="https://www.instagram.com/itx_asad001"><img className='w-[23px] h-[23px]  ml-2 MArgin-left-insta' src={instagram} />
     
     </Link>
-    <Link to="https://www.linkedin.com/in/zeeshan-ali-zafar-22103b250">
-     <img className='w-[30px] h-[30px] ' src='https://static.vecteezy.com/system/resources/thumbnails/023/986/970/small/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png' />
+    <Link to="https://www.linkedin.com/in/asad-khan-lodhi-9b6523282"> <img className='w-[30px] h-[30px] ' src='https://static.vecteezy.com/system/resources/thumbnails/023/986/970/small/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png' />
     </Link>
     <img className='w-[35px] h-[38px] Marginrigght ' src={Snapchat} />
 </div>
@@ -1161,6 +1183,7 @@ apple === true ?
 
 
 export default Header
+
 
 
 
