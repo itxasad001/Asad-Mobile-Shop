@@ -938,7 +938,7 @@ else{  setdata({
     <Box sx={{ width: 36 }}>
       <button>
          <a
-    href="https://mobiles-ai-chatmodel-front.vercel.app/"
+    href="https://chat-frontend-one-henna.vercel.app/"
     target="_blank"
     rel="noopener noreferrer"
   >
